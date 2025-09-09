@@ -22,7 +22,6 @@ Minimalist portfolio with macOS window style and terminal/hacking theme. Feature
 - 🎨 **Modern Aesthetics** - Clean design with dark theme and accent colors
 - 🔗 **Social Media Integration** - Direct links to all social platforms
 - ⚡ **Fast Loading** - Lightweight implementation with no frameworks
-- 🌐 **Custom Favicon** - Pixelated "C" favicon matching the site's design
 
 ## 🛠️ Technologies Used
 
