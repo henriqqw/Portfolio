@@ -1,6 +1,6 @@
 # Portfolio 💼
 
-Personal portfolio website with macOS window style and terminal/hacking theme.
+Personal portfolio website for caosdev - Cyber Security Student focused on Pentest, Ethical Hacking, Forensics, and DevSecOps.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -12,7 +12,7 @@ Personal portfolio website with macOS window style and terminal/hacking theme.
 
 ## 📝 Description
 
-Minimalist portfolio with macOS window style and terminal/hacking theme. Features a unique interface that combines the aesthetics of a macOS window with a terminal-style command line interface.
+Cyber Security Student portfolio with macOS window style and terminal/hacking theme. Focused on offensive and defensive security techniques including Pentest, Ethical Hacking, Forensics, and DevSecOps.
 
 ## ✨ Features
 
@@ -22,6 +22,9 @@ Minimalist portfolio with macOS window style and terminal/hacking theme. Feature
 - 🎨 **Modern Aesthetics** - Clean design with dark theme and accent colors
 - 🔗 **Social Media Integration** - Direct links to all social platforms
 - ⚡ **Fast Loading** - Lightweight implementation with no frameworks
+- 🔍 **SEO Optimized** - Proper meta tags, Open Graph, and Twitter cards
+- 🤖 **Search Engine Friendly** - Includes sitemap.xml and robots.txt
+- 🛡️ **Cyber Security Focus** - Content optimized for security professionals
 
 ## 🛠️ Technologies Used
 
