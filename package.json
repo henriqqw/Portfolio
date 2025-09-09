@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website with macOS window style and terminal/hacking theme.",
+  "main": "generate-favicon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriqqw/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henriqqw/Portfolio/issues"
+  },
+  "homepage": "https://github.com/henriqqw/Portfolio#readme",
+  "dependencies": {
+    "canvas": "^3.2.0"
+  }
+}

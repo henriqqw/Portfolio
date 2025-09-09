@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Favicon Creation</title>
+  <style>
+    body {
+      background: #0b0f0c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .pixel-grid {
+      display: grid;
+      grid-template-columns: repeat(16, 10px);
+      grid-template-rows: repeat(16, 10px);
+      gap: 0;
+      border: 1px solid #1d2a1f;
+    }
+    
+    .pixel {
+      width: 10px;
+      height: 10px;
+    }
+    
+    .on {
+      background-color: #7cff8b;
+    }
+    
+    .off {
+      background-color: #0b0f0c;
+    }
+  </style>
+</head>
+<body>
+  <div class="pixel-grid" id="faviconGrid"></div>
+
+  <script>
+    // Define the 16x16 pixel "C" pattern
+    const pattern = [
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0],
+      [0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0],
+      [0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0],
+      [0,0,1,1,1,0,0,0,0,0,0,0,1,1,1,0],
+      [0,0,1,1,0,0,0,0,0,0,0,0,0,1,1,0],
+      [0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1],
+      [0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1],
+      [0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1],
+      [0,0,1,1,0,0,0,0,0,0,0,0,0,1,1,0],
+      [0,0,1,1,1,0,0,0,0,0,0,0,1,1,1,0],
+      [0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0],
+      [0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0],
+      [0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0]
+    ];
+    
+    const grid = document.getElementById('faviconGrid');
+    
+    for (let i = 0; i < 16; i++) {
+      for (let j = 0; j < 16; j++) {
+        const pixel = document.createElement('div');
+        pixel.className = pattern[i][j] ? 'pixel on' : 'pixel off';
+        grid.appendChild(pixel);
+      }
+    }
+    
+    // Convert to actual favicon
+    const canvas = document.createElement('canvas');
+    canvas.width = 16;
+    canvas.height = 16;
+    const ctx = canvas.getContext('2d');
+    
+    for (let i = 0; i < 16; i++) {
+      for (let j = 0; j < 16; j++) {
+        if (pattern[i][j]) {
+          ctx.fillStyle = '#7cff8b';
+        } else {
+          ctx.fillStyle = '#0b0f0c';
+        }
+        ctx.fillRect(j, i, 1, 1);
+      }
+    }
+    
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = canvas.toDataURL('image/png');
+    document.head.appendChild(link);
+    
+    // Also create a larger version for preview
+    const previewCanvas = document.createElement('canvas');
+    previewCanvas.width = 64;
+    previewCanvas.height = 64;
+    const previewCtx = previewCanvas.getContext('2d');
+    previewCtx.imageSmoothingEnabled = false;
+    
+    for (let i = 0; i < 16; i++) {
+      for (let j = 0; j < 16; j++) {
+        if (pattern[i][j]) {
+          previewCtx.fillStyle = '#7cff8b';
+        } else {
+          previewCtx.fillStyle = '#0b0f0c';
+        }
+        previewCtx.fillRect(j * 4, i * 4, 4, 4);
+      }
+    }
+    
+    // Add preview to page
+    const preview = document.createElement('div');
+    preview.style.position = 'fixed';
+    preview.style.top = '20px';
+    preview.style.right = '20px';
+    preview.style.border = '2px solid #1d2a1f';
+    preview.appendChild(previewCanvas);
+    document.body.appendChild(preview);
+  </script>
+</body>
+</html>
