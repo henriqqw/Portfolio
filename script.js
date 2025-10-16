@@ -158,5 +158,67 @@
     }
 })();
 
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (!carouselContainer) return;
 
+    let currentIndex = 0;
+    const track = document.getElementById('carouselTrack');
+    const cards = document.querySelectorAll('.project-card');
+    const totalProjects = cards.length;
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    const nextButton = document.querySelector('.carousel-btn.next');
 
+    // Create dots
+    for (let i = 0; i < totalProjects; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+
+    function moveCarousel(direction) {
+        currentIndex += direction;
+        
+        if (currentIndex < 0) {
+            currentIndex = totalProjects - 1;
+        } else if (currentIndex >= totalProjects) {
+            currentIndex = 0;
+        }
+        
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+        
+        // Update dots
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update counter
+        document.getElementById('currentProject').textContent = currentIndex + 1;
+        document.getElementById('totalProjects').textContent = totalProjects;
+    }
+
+    prevButton.addEventListener('click', () => moveCarousel(-1));
+    nextButton.addEventListener('click', () => moveCarousel(1));
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') moveCarousel(-1);
+        if (e.key === 'ArrowRight') moveCarousel(1);
+    });
+
+    updateCarousel();
+});
