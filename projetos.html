@@ -57,6 +57,31 @@
             <button class="carousel-btn prev">‹</button>
             
             <div class="carousel-wrapper">
+                <div class="window-chrome" role="toolbar" aria-label="Controles da janela">
+                    <div class="window-controls-left">
+                        <span class="dot dot-red" aria-hidden="true"></span>
+                        <span class="dot dot-yellow" aria-hidden="true"></span>
+                        <span class="dot dot-green" aria-hidden="true"></span>
+                    </div>
+                    <span class="window-title">/usr/bin/projects — caosdev</span>
+                    <div class="window-controls-right">
+                        <button class="window-btn minimize" aria-label="Minimizar">
+                            <svg viewBox="0 0 12 12" width="12" height="12">
+                                <rect x="2" y="5.5" width="8" height="1" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="window-btn maximize" aria-label="Maximizar">
+                            <svg viewBox="0 0 12 12" width="12" height="12">
+                                <rect x="2" y="2" width="8" height="8" fill="none" stroke="currentColor" stroke-width="1"/>
+                            </svg>
+                        </button>
+                        <button class="window-btn close" aria-label="Fechar">
+                            <svg viewBox="0 0 12 12" width="12" height="12">
+                                <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
                 <div class="carousel-track" id="carouselTrack">
                     <!-- Project 1 -->
                     <div class="project-card">
