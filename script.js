@@ -6,7 +6,9 @@
     // Animar "caosdev" no header
     const brandText = document.getElementById('brand-text');
     if (brandText) {
-        typeText(brandText, 'caosdev', 100);
+        brandText.innerHTML = '<a href="/" style="text-decoration: none; color: inherit;"></a>';
+        const brandLink = brandText.querySelector('a');
+        typeText(brandLink, 'caosdev', 100);
     }
 
     // Inicialmente ocultar [OK] e textos de boot
@@ -174,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.getElementById('carouselDots');
     const prevButton = document.querySelector('.carousel-btn.prev');
     const nextButton = document.querySelector('.carousel-btn.next');
+    const animatedCards = new Set();
 
     // Create dots
     for (let i = 0; i < totalProjects; i++) {
@@ -203,6 +206,43 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             type();
         });
+    }
+
+    function showFinalState(cardIndex) {
+        const card = cards[cardIndex];
+        const originalPrompt = card.querySelector('.project-prompt');
+        const typedCommandElement = originalPrompt.querySelector(`#typed-command-${cardIndex}`);
+        const techStackElement = card.querySelector(`#tech-stack-${cardIndex}`);
+        const contentArea = originalPrompt.parentElement;
+
+        // --- Cleanup previous dynamic elements ---
+        contentArea.querySelectorAll('.project-description-output, .new-prompt').forEach(el => el.remove());
+        
+        // --- Get project data ---
+        const descriptionText = card.querySelector('.project-description-hidden').textContent.trim();
+        const techLabelText = card.querySelector('.tech-label-hidden').textContent.trim();
+        const techTagsHtml = card.querySelector('.tech-tags-hidden').innerHTML;
+        const projectUrl = card.querySelector('.project-links a[href*="://"]')?.href || 'local';
+
+        // --- Display final state of command 1 ---
+        typedCommandElement.textContent = 'echo $DESCRIPTION';
+        const projectDescriptionOutput = document.createElement('div');
+        projectDescriptionOutput.classList.add('project-description-output');
+        projectDescriptionOutput.textContent = descriptionText;
+        originalPrompt.insertAdjacentElement('afterend', projectDescriptionOutput);
+
+        // --- Display final state of command 2 ---
+        const newPrompt = document.createElement('pre');
+        newPrompt.className = 'project-prompt new-prompt';
+        newPrompt.style.marginBottom = '15px';
+        newPrompt.innerHTML = `<code><span class="caret-line">caos@root:~#</span> <span class="typed-command">curl -I "${projectUrl}"</span><span class="blink">▊</span></code>`;
+        projectDescriptionOutput.insertAdjacentElement('afterend', newPrompt);
+
+        // --- Display technologies ---
+        techStackElement.style.display = 'block';
+        techStackElement.querySelector('.tech-label').textContent = techLabelText;
+        techStackElement.querySelector('.tech-tags').innerHTML = techTagsHtml;
+        newPrompt.insertAdjacentElement('afterend', techStackElement);
     }
 
     // Function to type text with terminal effect (for project cards)
@@ -313,8 +353,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('currentProject').textContent = currentIndex + 1;
         document.getElementById('totalProjects').textContent = totalProjects;
 
-        // Trigger animation for the current card
-        typeProjectCommand(currentIndex);
+        // Trigger animation only once
+        if (animatedCards.has(currentIndex)) {
+            showFinalState(currentIndex);
+        } else {
+            typeProjectCommand(currentIndex);
+            animatedCards.add(currentIndex);
+        }
     }
 
     prevButton.addEventListener('click', () => moveCarousel(-1));
