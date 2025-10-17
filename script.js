@@ -51,17 +51,22 @@
         }, item.delay);
     });
 
-    // Função para digitar texto com efeito terminal
+    // Função para digitar texto com efeito terminal (modificada para Promise)
     function typeText(element, text, speed = 50) {
         let i = 0;
-        const type = () => {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
+        element.textContent = ''; // Clear content before typing
+        return new Promise(resolve => {
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    resolve();
+                }
             }
-        };
-        type();
+            type();
+        });
     }
 
     // Animar linhas do npm start
@@ -179,6 +184,103 @@ document.addEventListener('DOMContentLoaded', () => {
         dotsContainer.appendChild(dot);
     }
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function typeText(element, text, speed = 30) { // Default speed 30ms
+        let i = 0;
+        element.innerHTML = '';
+        return new Promise(resolve => {
+            const type = () => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    resolve();
+                }
+            };
+            type();
+        });
+    }
+
+    // Function to type text with terminal effect (for project cards)
+    async function typeProjectCommand(cardIndex) {
+        const card = cards[cardIndex];
+        const originalPrompt = card.querySelector('.project-prompt');
+        const typedCommandElement = originalPrompt.querySelector(`#typed-command-${cardIndex}`);
+        const blinkCursor = originalPrompt.querySelector(`#blink-${cardIndex}`);
+        const techStackElement = card.querySelector(`#tech-stack-${cardIndex}`);
+        const contentArea = originalPrompt.parentElement;
+
+        // --- Cleanup previous dynamic elements ---
+        contentArea.querySelectorAll('.project-description-output, .new-prompt').forEach(el => el.remove());
+        
+        // --- Reset original prompt and tech stack ---
+        typedCommandElement.innerHTML = '';
+        techStackElement.style.display = 'none';
+        blinkCursor.style.opacity = '1';
+
+        // --- Get project data ---
+        const descriptionText = card.querySelector('.project-description-hidden').textContent.trim();
+        const techLabelText = card.querySelector('.tech-label-hidden').textContent.trim();
+        const hiddenTags = Array.from(card.querySelectorAll('.tech-tags-hidden .tech-tag'));
+        const projectUrl = card.querySelector('.project-links a[href*="://"]')?.href || 'local';
+
+        // --- Command 1: echo $DESCRIPTION ---
+        await typeText(typedCommandElement, 'echo $DESCRIPTION', 50);
+        blinkCursor.style.opacity = '0';
+
+        // --- Display description with typing animation ---
+        const projectDescriptionOutput = document.createElement('div');
+        projectDescriptionOutput.classList.add('project-description-output');
+        originalPrompt.insertAdjacentElement('afterend', projectDescriptionOutput);
+        await typeText(projectDescriptionOutput, descriptionText, 15);
+        
+        await sleep(200);
+
+        // --- Create and animate Command 2: curl ---
+        const newPrompt = document.createElement('pre');
+        newPrompt.className = 'project-prompt new-prompt';
+        newPrompt.innerHTML = `<code><span class="caret-line">caos@root:~#</span> <span class="typed-command"></span><span class="blink">▊</span></code>`;
+        projectDescriptionOutput.insertAdjacentElement('afterend', newPrompt);
+        
+        const newTypedCommandElement = newPrompt.querySelector('.typed-command');
+        const newBlinkCursor = newPrompt.querySelector('.blink');
+
+        await typeText(newTypedCommandElement, `curl -I "${projectUrl}"`, 50);
+        newBlinkCursor.style.opacity = '0';
+
+        // --- Display technologies with animation ---
+        techStackElement.style.display = 'block';
+        const techLabelElement = techStackElement.querySelector('.tech-label');
+        const techTagsContainer = techStackElement.querySelector('.tech-tags');
+        
+        techLabelElement.innerHTML = '';
+        techTagsContainer.innerHTML = '';
+
+        newPrompt.insertAdjacentElement('afterend', techStackElement);
+        
+        // Animate tags
+        for (const tag of hiddenTags) {
+            const tagClone = tag.cloneNode(true);
+            tagClone.style.opacity = 0;
+            techTagsContainer.appendChild(tagClone);
+            techTagsContainer.append(' '); // Add space
+        }
+
+        const tagsToAnimate = techTagsContainer.querySelectorAll('.tech-tag');
+        for (const tag of tagsToAnimate) {
+            await sleep(150);
+            tag.style.transition = 'opacity 0.3s';
+            tag.style.opacity = 1;
+        }
+
+        // Set final cursor state
+        newBlinkCursor.style.opacity = '1';
+    }
+
     function moveCarousel(direction) {
         currentIndex += direction;
         
@@ -201,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         track.style.transform = `translateX(${offset}%)`;
         
         // Update dots
-        const dots = document.querySelectorAll('.dot');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
@@ -209,6 +311,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update counter
         document.getElementById('currentProject').textContent = currentIndex + 1;
         document.getElementById('totalProjects').textContent = totalProjects;
+
+        // Trigger animation for the current card
+        typeProjectCommand(currentIndex);
     }
 
     prevButton.addEventListener('click', () => moveCarousel(-1));
@@ -220,5 +325,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowRight') moveCarousel(1);
     });
 
-    updateCarousel();
+    updateCarousel(); // Initial call to set up carousel and animate first card
 });

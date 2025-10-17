@@ -287,11 +287,23 @@ body {
     line-height: 1.7;
 }
 
+.project-description-output {
+    color: var(--text);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
 .project-prompt {
-    margin-bottom: 25px;
+    margin-bottom: 1px;
     font-size: 0.95rem;
     line-height: 1.7;
     color: var(--text);
+}
+
+.tech-stack {
+    margin-bottom: 25px;
 }
 
 .project-links {
