@@ -306,6 +306,12 @@ body {
     margin-bottom: 25px;
 }
 
+.tech-tag {
+    padding: 3px 8px;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+}
+
 .project-links {
     display: flex;
     gap: 15px;

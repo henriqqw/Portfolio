@@ -243,6 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- Create and animate Command 2: curl ---
         const newPrompt = document.createElement('pre');
         newPrompt.className = 'project-prompt new-prompt';
+        newPrompt.style.marginBottom = '15px';
         newPrompt.innerHTML = `<code><span class="caret-line">caos@root:~#</span> <span class="typed-command"></span><span class="blink">▊</span></code>`;
         projectDescriptionOutput.insertAdjacentElement('afterend', newPrompt);
         
