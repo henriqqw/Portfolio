@@ -1,8 +1,5 @@
 // Efeitos leves para o tema terminal
 (function () {
-    const pre = document.querySelector('.prompt');
-    if (!pre) return;
-
     // Animar "caosdev" no header
     const brandText = document.getElementById('brand-text');
     if (brandText) {
@@ -10,6 +7,9 @@
         const brandLink = brandText.querySelector('a');
         typeText(brandLink, 'caosdev', 100);
     }
+
+    const pre = document.querySelector('.prompt');
+    if (!pre) return;
 
     // Inicialmente ocultar [OK] e textos de boot
     const okLines = pre.querySelectorAll('.ok');
