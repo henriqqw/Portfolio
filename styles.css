@@ -594,3 +594,16 @@ body {
         line-height: 4px;
     }
 }
+
+.cta-card {
+    text-align: center;
+}
+
+.cta-card h2 {
+    margin-bottom: 10px;
+}
+
+.cta-card p {
+    margin-bottom: 20px;
+}
+
