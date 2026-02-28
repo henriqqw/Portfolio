@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://caosdev.vercel.app/sitemap.xml
