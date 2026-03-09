@@ -14,7 +14,7 @@ const translations = {
             status: 'status: ',
             online: 'online',
             whoami: 'whoami',
-            about: 'Estudante de Ciência da Computação. Foco em Defesa Cibernética: Ethical Hacking, Forense e DevSecOps. Apaixonado por Pentest — RED TEAM.'
+            about: 'Desenvolvedor de Software focado em IA, pesquisa de segurança e design de sistemas. A maior parte do meu trabalho envolve a construção de plataformas, ferramentas de segurança e projetos experimentais em torno de sistemas web modernos e superfícies de ataque emergentes.'
         },
         index: {
             viewProjects: 'Ver Projetos',
@@ -26,8 +26,8 @@ const translations = {
         },
         projects: {
             security: 'Segurança',
-            webTools: 'Ferramentas Web',
-            landingPages: 'Páginas de Destino',
+            webTools: 'Ferramentas',
+            landingPages: 'Landing Pages',
             softwares: 'Softwares',
             btnWebsite: 'WEBSITE',
             btnGithub: 'GITHUB',
@@ -51,7 +51,7 @@ const translations = {
             status: 'status: ',
             online: 'online',
             whoami: 'whoami',
-            about: 'Computer Science Student. Focus on Cyber Defense: Ethical Hacking, Forensics, and DevSecOps. Passionate about Pentest — RED TEAM.'
+            about: 'Software Developer focused on AI, security research and system design. Most of my work involves building platforms, security tools and experimental projects around modern web systems and emerging attack surfaces.'
         },
         index: {
             viewProjects: 'View Projects',
@@ -93,26 +93,19 @@ if (langParam) localStorage.setItem('preferred-lang', currentLang);
 // Terminal animation logic (simplified to support dynamic re-triggering if needed, but mostly stays the same)
 function initTerminal(lang) {
     const t = translations[lang].terminal;
-    // Replace text in elements if they exist
-    const loadText = document.querySelector('.boot-text[id="text-1"]');
-    if (loadText) loadText.textContent = t.loading;
 
-    const statusLabel = document.querySelector('.boot-text[id="text-6"]');
-    if (statusLabel) statusLabel.textContent = t.status;
-
-    const statusText = document.getElementById('status-text');
-    if (statusText) statusText.textContent = t.online;
+    setTextOrType(document.querySelector('.boot-text[id="text-1"]'), t.loading);
+    setTextOrType(document.querySelector('.boot-text[id="text-6"]'), t.status);
+    setTextOrType(document.getElementById('status-text'), t.online);
 
     const whoamiCmd = document.getElementById('whoami-cmd');
-    if (whoamiCmd) {
-        // Only re-type if needed, or just set text
-        if (!whoamiCmd.textContent) whoamiCmd.textContent = t.whoami;
+    if (whoamiCmd && whoamiCmd.classList.contains('visible')) {
+        setTextOrType(whoamiCmd, t.whoami);
     }
 
     const typedTarget = document.getElementById('typed');
-    if (typedTarget) {
-        // If it's already typed, update it directly
-        typedTarget.textContent = '\n' + t.about;
+    if (typedTarget && typedTarget.classList.contains('visible')) {
+        setTextOrType(typedTarget, '\n' + t.about);
     }
 }
 
@@ -153,7 +146,7 @@ function updateLanguage(lang) {
     sectionTitles.forEach(title => {
         const txt = title.textContent.trim();
         if (txt === 'Security' || txt === 'Segurança') title.textContent = t.projects.security;
-        if (txt === 'Web Tools' || txt === 'Ferramentas Web') title.textContent = t.projects.webTools;
+        if (txt === 'Web Tools' || txt === 'Ferramentas Web' || txt === 'Ferramentas') title.textContent = t.projects.webTools;
         if (txt === 'Landing Pages' || txt === 'Páginas de Destino') title.textContent = t.projects.landingPages;
         if (txt === 'Softwares') title.textContent = t.projects.softwares;
     });
@@ -217,101 +210,124 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const pre = document.querySelector('.prompt');
     if (pre) {
-        const okLines = pre.querySelectorAll('.ok');
-        const bootTexts = pre.querySelectorAll('.boot-text');
-        okLines.forEach(el => el.style.opacity = '0');
-        bootTexts.forEach(el => el.style.opacity = '0');
-
-        const bootSequence = [
-            { delay: 1500, textId: 'text-1' },
-            { delay: 1900, textId: 'text-2' },
-            { delay: 2300, textId: 'text-3' },
-            { delay: 2700, textId: 'text-4' },
-            { delay: 3100, textId: 'text-5' },
-            { delay: 3500, textId: 'text-6' }
-        ];
-
-        bootSequence.forEach((item, idx) => {
-            setTimeout(() => {
-                const okElements = pre.querySelectorAll('.ok');
-                const textElement = document.getElementById(item.textId);
-                if (okElements[idx]) {
-                    okElements[idx].style.opacity = '1';
-                    okElements[idx].style.color = 'var(--ok)';
-                }
-                if (textElement) textElement.style.opacity = '1';
-            }, item.delay);
-        });
-
-        setTimeout(() => {
-            const npm1 = document.getElementById('npm-1');
-            if (npm1) typeText(npm1, 'npm start', 60);
-        }, 200);
-
-        setTimeout(() => {
-            const npm2 = document.getElementById('npm-2');
-            if (npm2) npm2.textContent = '> portfolio@1.0.0 start';
-        }, 600);
-
-        setTimeout(() => {
-            const npm3 = document.getElementById('npm-3');
-            if (npm3) npm3.textContent = '> node server.js';
-        }, 1000);
-
-        setTimeout(() => {
-            const profileName = document.getElementById('profile-name');
-            if (profileName) profileName.textContent = 'Henrique Lanzoni';
-        }, 1700);
-
-        // Whoami animation
-        setTimeout(() => {
-            const promptLine = document.getElementById('prompt-line');
-            if (promptLine) promptLine.style.opacity = '1';
-            setTimeout(() => {
-                const whoamiCmd = document.getElementById('whoami-cmd');
-                if (whoamiCmd) {
-                    whoamiCmd.style.opacity = '1';
-                    typeText(whoamiCmd, translations[currentLang].terminal.whoami, 80);
-                }
-                setTimeout(() => {
-                    const blinkCursor = pre.querySelector('.blink');
-                    if (blinkCursor) blinkCursor.style.opacity = '1';
-
-                    // Typed target (sobre mim)
-                    const typedTarget = document.getElementById('typed');
-                    if (typedTarget) {
-                        const text = translations[currentLang].terminal.about;
-                        let i = 0;
-                        typedTarget.textContent = '\n';
-                        const type = () => {
-                            if (i < text.length) {
-                                typedTarget.textContent += text.charAt(i);
-                                i++;
-                                setTimeout(type, 18);
-                            }
-                        };
-                        type();
-                    }
-                }, 480);
-            }, 200);
-        }, 4000);
+        playTerminalAnimation();
     }
 });
 
+const typeWriterActive = new Map();
+
 function typeText(element, text, speed = 50) {
-    let i = 0;
-    element.textContent = '';
     return new Promise(resolve => {
-        function type() {
+        if (typeWriterActive.has(element)) {
+            const old = typeWriterActive.get(element);
+            clearInterval(old.interval);
+            old.resolve();
+        }
+
+        element.textContent = '';
+        let i = 0;
+        const interval = setInterval(() => {
             if (i < text.length) {
                 element.textContent += text.charAt(i);
                 i++;
-                setTimeout(type, speed);
             } else {
+                clearInterval(interval);
+                typeWriterActive.delete(element);
                 resolve();
             }
-        }
-        type();
+        }, speed);
+
+        typeWriterActive.set(element, { interval, resolve });
     });
+}
+
+function setTextOrType(element, text) {
+    if (!element) return;
+    if (typeWriterActive.has(element)) {
+        const old = typeWriterActive.get(element);
+        clearInterval(old.interval);
+        old.resolve();
+        typeWriterActive.delete(element);
+    }
+    element.textContent = text;
+}
+
+async function playTerminalAnimation() {
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    const pre = document.querySelector('.prompt');
+    if (!pre) return;
+
+    await sleep(200);
+    const npm1 = document.getElementById('npm-1');
+    if (npm1) {
+        npm1.classList.add('visible');
+        await typeText(npm1, 'npm start', 60);
+    }
+
+    await sleep(200);
+    const npm2 = document.getElementById('npm-2');
+    if (npm2) {
+        npm2.textContent = '> portfolio@1.0.0 start';
+        npm2.classList.add('visible');
+    }
+
+    await sleep(400);
+    const npm3 = document.getElementById('npm-3');
+    if (npm3) {
+        npm3.textContent = '> node server.js';
+        npm3.classList.add('visible');
+    }
+
+    await sleep(500);
+
+    const bootSequence = ['text-1', 'text-2', 'text-3', 'text-4', 'text-5', 'text-6'];
+    const okElements = pre.querySelectorAll('.ok');
+
+    for (let i = 0; i < bootSequence.length; i++) {
+        if (okElements[i]) {
+            okElements[i].classList.add('visible');
+        }
+        const textElement = document.getElementById(bootSequence[i]);
+        if (textElement) textElement.classList.add('visible');
+
+        if (i === 0) {
+            await sleep(200);
+            const profileName = document.getElementById('profile-name');
+            if (profileName) {
+                profileName.textContent = 'Henrique Lanzoni';
+                profileName.classList.add('visible');
+            }
+        }
+
+        if (i === bootSequence.length - 1) {
+            await sleep(200);
+            const statusText = document.getElementById('status-text');
+            if (statusText) statusText.classList.add('visible');
+        }
+
+        await sleep(300);
+    }
+
+    await sleep(300);
+
+    const promptLine = document.getElementById('prompt-line');
+    if (promptLine) promptLine.classList.add('visible');
+
+    await sleep(200);
+    const whoamiCmd = document.getElementById('whoami-cmd');
+    if (whoamiCmd) {
+        whoamiCmd.classList.add('visible');
+        await typeText(whoamiCmd, translations[currentLang].terminal.whoami, 80);
+    }
+
+    const blinkCursor = pre.querySelector('.blink');
+    if (blinkCursor) blinkCursor.classList.add('visible');
+
+    await sleep(200);
+    const typedTarget = document.getElementById('typed');
+    if (typedTarget) {
+        typedTarget.classList.add('visible');
+        await typeText(typedTarget, '\n' + translations[currentLang].terminal.about, 18);
+    }
 }
 

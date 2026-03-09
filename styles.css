@@ -363,12 +363,17 @@ body {
     color: var(--text);
 }
 
-/* Ocultar prompt e cursor inicialmente */
-#prompt-line,
-#whoami-cmd,
-.blink {
+/* Ocultar prompt e elementos do terminal inicialmente */
+#npm-1, #npm-2, #npm-3,
+.ok, .boot-text,
+#profile-name, #status-text, #status-icon-container,
+#prompt-line, #whoami-cmd, #typed, .blink {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease-out;
+}
+
+.visible {
+    opacity: 1 !important;
 }
 
 .panel {
