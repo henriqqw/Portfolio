@@ -168,7 +168,17 @@
 <span class="ok">[OK]</span> <span class="boot-text" id="text-5">server running on port 3000</span>
 <span class="ok">[OK]</span> <span class="boot-text" id="text-6">status: </span><span class="accent" id="status-text"></span> <span id="status-icon-container"></span>
 
-<span class="caret-line" id="prompt-line">caos@root:~#</span> <span id="whoami-cmd"></span><span id="typed"></span><span class="blink">▊</span></code>
+<span class="caret-line" id="prompt-line">caos@root:~#</span> <span id="whoami-cmd"></span><span id="typed"></span>
+<span id="hint-text" class="accent"></span><span class="blink" id="main-blink">▊</span>
+
+<div id="interactive-terminal" class="hidden">
+    <div id="terminal-history"></div>
+    <div class="input-line">
+        <span class="caret-line">caos@root:~#</span>
+        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+    </div>
+</div>
+</code>
                     </pre>
                 </div>
             </div>

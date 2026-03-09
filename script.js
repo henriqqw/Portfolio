@@ -14,7 +14,8 @@ const translations = {
             status: 'status: ',
             online: 'online',
             whoami: 'whoami',
-            about: 'Desenvolvedor de Software focado em IA, pesquisa de segurança e design de sistemas. A maior parte do meu trabalho envolve a construção de plataformas, ferramentas de segurança e projetos experimentais em torno de sistemas web modernos e superfícies de ataque emergentes.'
+            about: 'Desenvolvedor de Software focado em IA, pesquisa de segurança e design de sistemas. A maior parte do meu trabalho envolve a construção de plataformas, ferramentas de segurança e projetos experimentais em torno de sistemas web modernos e superfícies de ataque emergentes.',
+            hint: '[ Dica: Digite \'help\' para ver os comandos disponíveis. ]'
         },
         index: {
             viewProjects: 'Ver Projetos',
@@ -51,7 +52,8 @@ const translations = {
             status: 'status: ',
             online: 'online',
             whoami: 'whoami',
-            about: 'Software Developer focused on AI, security research and system design. Most of my work involves building platforms, security tools and experimental projects around modern web systems and emerging attack surfaces.'
+            about: 'Software Developer focused on AI, security research and system design. Most of my work involves building platforms, security tools and experimental projects around modern web systems and emerging attack surfaces.',
+            hint: '[ Hint: Type \'help\' to see available commands. ]'
         },
         index: {
             viewProjects: 'View Projects',
@@ -258,28 +260,28 @@ async function playTerminalAnimation() {
     const pre = document.querySelector('.prompt');
     if (!pre) return;
 
-    await sleep(200);
+    await sleep(50);
     const npm1 = document.getElementById('npm-1');
     if (npm1) {
         npm1.classList.add('visible');
-        await typeText(npm1, 'npm start', 60);
+        await typeText(npm1, 'npm start', 30);
     }
 
-    await sleep(200);
+    await sleep(100);
     const npm2 = document.getElementById('npm-2');
     if (npm2) {
         npm2.textContent = '> portfolio@1.0.0 start';
         npm2.classList.add('visible');
     }
 
-    await sleep(400);
+    await sleep(150);
     const npm3 = document.getElementById('npm-3');
     if (npm3) {
         npm3.textContent = '> node server.js';
         npm3.classList.add('visible');
     }
 
-    await sleep(500);
+    await sleep(200);
 
     const bootSequence = ['text-1', 'text-2', 'text-3', 'text-4', 'text-5', 'text-6'];
     const okElements = pre.querySelectorAll('.ok');
@@ -292,7 +294,7 @@ async function playTerminalAnimation() {
         if (textElement) textElement.classList.add('visible');
 
         if (i === 0) {
-            await sleep(200);
+            await sleep(50);
             const profileName = document.getElementById('profile-name');
             if (profileName) {
                 profileName.textContent = 'Henrique Lanzoni';
@@ -301,34 +303,216 @@ async function playTerminalAnimation() {
         }
 
         if (i === bootSequence.length - 1) {
-            await sleep(200);
+            await sleep(50);
             const statusText = document.getElementById('status-text');
             if (statusText) statusText.classList.add('visible');
         }
 
-        await sleep(300);
+        await sleep(100);
     }
 
-    await sleep(300);
+    await sleep(100);
 
     const promptLine = document.getElementById('prompt-line');
     if (promptLine) promptLine.classList.add('visible');
 
-    await sleep(200);
+    await sleep(100);
     const whoamiCmd = document.getElementById('whoami-cmd');
     if (whoamiCmd) {
         whoamiCmd.classList.add('visible');
-        await typeText(whoamiCmd, translations[currentLang].terminal.whoami, 80);
+        await typeText(whoamiCmd, translations[currentLang].terminal.whoami, 40);
     }
 
     const blinkCursor = pre.querySelector('.blink');
     if (blinkCursor) blinkCursor.classList.add('visible');
 
-    await sleep(200);
+    await sleep(50);
     const typedTarget = document.getElementById('typed');
     if (typedTarget) {
         typedTarget.classList.add('visible');
-        await typeText(typedTarget, '\n' + translations[currentLang].terminal.about, 18);
+        await typeText(typedTarget, '\n' + translations[currentLang].terminal.about + '\n', 5);
+    }
+
+    await sleep(100);
+    const hintTextElement = document.getElementById('hint-text');
+    if (hintTextElement) {
+        const hintText = translations[currentLang].terminal.hint || "[ Dica: Digite 'help' para ver os comandos disponíveis. ]";
+        await typeText(hintTextElement, '\n' + hintText, 10);
+    }
+
+    await sleep(50);
+    const mainBlink = document.getElementById('main-blink');
+    if (mainBlink) {
+        mainBlink.style.display = 'none'; // Hide the fake blinker
+    }
+    const interactiveTerminal = document.getElementById('interactive-terminal');
+    const terminalInput = document.getElementById('terminal-input');
+    if (interactiveTerminal && terminalInput) {
+        interactiveTerminal.classList.remove('hidden');
+        terminalInput.focus();
     }
 }
 
+// -------------------------------------------------------------
+// Interactive Terminal Engine
+// -------------------------------------------------------------
+const terminalInput = document.getElementById('terminal-input');
+const terminalHistory = document.getElementById('terminal-history');
+
+if (terminalInput) {
+    // Keep focus on terminal when clicking inside the window
+    const terminalWindow = document.querySelector('.terminal');
+    if (terminalWindow) {
+        terminalWindow.addEventListener('click', () => {
+            if (!getSelection().toString()) {
+                terminalInput.focus();
+            }
+        });
+    }
+
+    terminalInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            const cmd = this.value.trim();
+            this.value = '';
+            if (cmd !== '') {
+                processCommand(cmd);
+            }
+        }
+    });
+}
+
+function processCommand(cmd) {
+    const args = cmd.split(' ');
+    const mainCmd = args[0].toLowerCase();
+
+    // Add command to history
+    addHistoryEntry(`caos@root:~# ${cmd}`);
+
+    // Handle commands
+    switch (mainCmd) {
+        case 'help':
+            const helpText = `Comandos disponíveis:
+<div class="cmd-table">
+    <span class="cmd-name">about</span><span>Resumo sobre mim e minha missão</span>
+    <span class="cmd-name">skills</span><span>Minha stack (Off-sec, AI, Web)</span>
+    <span class="cmd-name">contact</span><span>Links e formas de me encontrar</span>
+    <span class="cmd-name">projects</span><span>Ver meus repositórios em destaque</span>
+    <span class="cmd-name">whois</span><span>Listar dados do meu domínio ativo</span>
+    <span class="cmd-name">nmap</span><span>Escaneamento de portas ativas/serviços</span>
+    <span class="cmd-name">ls / dir</span><span>Listar arquivos e diretórios do host</span>
+    <span class="cmd-name">cat</span><span>Ler o conteúdo de um arquivo em texto</span>
+    <span class="cmd-name">clear</span><span>Limpa o terminal</span>
+    <span class="cmd-name">sudo</span><span>?????</span>
+</div>`;
+            addOutput(helpText);
+            break;
+
+        case 'about':
+            addOutput("Software Engineer focado em Inteligência Artificial, pesquisa de segurança, engenharia de prompts e arquitetura de sistemas. Construo plataformas robustas focadas em segurança ofensiva e RAG.");
+            break;
+
+        case 'skills':
+            const skillsText = `
+[❖] Security: Penetration Testing, Vuln Analysis, Attk Surface
+[❖] AI & GenAI: Prompt Engineering, RAG Systems, LLM Sec
+[❖] Engineering: Python, TypeScript, Architecture, Clean Code, SOLID`;
+            addOutput(skillsText);
+            break;
+
+        case 'contact':
+            const contactText = `<div class="cmd-table">
+    <span class="cmd-name">Email</span><a href="mailto:henriqqw1@gmail.com" class="cmd-link">henriqqw1@gmail.com</a>
+    <span class="cmd-name">GitHub</span><a href="https://github.com/henriqqw" target="_blank" class="cmd-link">github.com/henriqqw</a>
+    <span class="cmd-name">LinkedIn</span><a href="https://www.linkedin.com/in/henrique-lanzoni-ab0828371/" target="_blank" class="cmd-link">linkedin.com/in/henrique-lanzoni</a>
+</div>`;
+            addOutput(contactText);
+            break;
+
+        case 'projects':
+            const projectsText = `Redirecionando para as plataformas...
+<a href="/projetos.html" class="cmd-link">> Clique aqui para acessar a página de Projetos</a>`;
+            addOutput(projectsText);
+            break;
+
+        case 'clear':
+        case 'cls':
+            terminalHistory.innerHTML = '';
+            break;
+
+        case 'sudo':
+        case 'su':
+            addOutput("Permission denied: incident reported. User 'guest' is not in the sudoers file.", "error");
+            break;
+
+        case 'rm':
+            if (args.includes('-rf') && args.includes('/')) {
+                addOutput("Nice try... mas eu conteinerizei isso aqui. 🛡️", "success");
+            } else {
+                addOutput(`rm: missing operand`);
+            }
+            break;
+
+        case 'whois':
+            const whoisText = `Domain Name: CAOSDEV
+Registry Domain ID: 0x1337-SEC
+Registrar: Local First Knowledge
+Creation Date: [Since 2024]
+Tech Stack: Python, AI, Off-Sec
+Status: ACTIVE_AND_LEARNING`;
+            addOutput(whoisText);
+            break;
+
+        case 'nmap':
+            addOutput(`PORT     STATE  SERVICE
+22/tcp   open   Python (v3.12)
+80/tcp   open   Web Architecture
+443/tcp  open   CyberSecurity_Knowledge
+8080/tcp open   RAG_Systems
+MAC Address: 00:00:00:00:00:00 (Human)`);
+            break;
+
+        case 'ls':
+        case 'dir':
+            addOutput(`<span style="color: #0fb2fb;">drwxr-xr-x</span>  projects/   <span style="color: #0fb2fb;">drwxr-xr-x</span>  skills/   <span style="color: var(--muted)">-rw-r--r--</span>  resume.pdf   <span style="color: #ff5f57;">-rwxrwxrwx</span>  DO_NOT_RUN.sh   <span style="color: var(--muted)">-rw-r--r--</span>  secret.txt`);
+            break;
+
+        case 'cat':
+            if (args[1] === 'secret.txt') {
+                addOutput(`Acessando arquivo confidencial confidencial... <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="cmd-link">[ENCRYPTED] Click to Decrypt</a>`);
+            } else if (args[1] === 'resume.pdf') {
+                addOutput(`Acesse os detalhes no meu <a href="https://www.linkedin.com/in/henrique-lanzoni-ab0828371/" target="_blank" class="cmd-link">LinkedIn</a>.`, 'success');
+            } else if (!args[1]) {
+                // Wait for input (we just exit here for simplicity)
+            } else {
+                addOutput(`cat: ${args[1]}: No such file or directory`, 'error');
+            }
+            break;
+
+        default:
+            addOutput(`bash: ${mainCmd}: command not found. Digite 'help' para ver os comandos.`, 'error');
+    }
+
+    // Auto-scroll to bottom
+    const terminalWindow = document.querySelector('.terminal-inner');
+    if (terminalWindow) {
+        terminalWindow.scrollTop = terminalWindow.scrollHeight;
+        // fallback robust scroll
+        setTimeout(() => {
+            terminalInput.scrollIntoView({ behavior: "smooth", block: "end" });
+        }, 50);
+    }
+}
+
+function addHistoryEntry(text) {
+    const line = document.createElement('div');
+    line.className = 'history-entry';
+    line.innerHTML = `<span class="caret-line">${text}</span>`;
+    terminalHistory.appendChild(line);
+}
+
+function addOutput(html, type = '') {
+    const line = document.createElement('div');
+    line.className = `cmd-output ${type}`;
+    line.innerHTML = html;
+    terminalHistory.appendChild(line);
+}

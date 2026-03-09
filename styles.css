@@ -178,6 +178,81 @@ body {
     overflow-x: visible;
 }
 
+#interactive-terminal {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#interactive-terminal.hidden {
+    display: none;
+}
+
+#terminal-history {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.history-entry {
+    margin-bottom: 8px;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    flex-grow: 1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    caret-color: var(--text);
+}
+
+.cmd-output {
+    color: var(--muted);
+    margin-top: 4px;
+    margin-left: 4px;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+.cmd-output.error {
+    color: #ff5f57;
+}
+
+.cmd-output.success {
+    color: var(--primary);
+}
+
+.cmd-link {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.cmd-link:hover {
+    text-decoration: underline;
+}
+
+.cmd-table {
+    display: grid;
+    grid-template-columns: minmax(100px, max-content) 1fr;
+    gap: 0px 15px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.cmd-table .cmd-name {
+    color: var(--primary);
+}
+
 .window {
     background: var(--bg-elev);
     border: 1px solid var(--border);
@@ -364,10 +439,18 @@ body {
 }
 
 /* Ocultar prompt e elementos do terminal inicialmente */
-#npm-1, #npm-2, #npm-3,
-.ok, .boot-text,
-#profile-name, #status-text, #status-icon-container,
-#prompt-line, #whoami-cmd, #typed, .blink {
+#npm-1,
+#npm-2,
+#npm-3,
+.ok,
+.boot-text,
+#profile-name,
+#status-text,
+#status-icon-container,
+#prompt-line,
+#whoami-cmd,
+#typed,
+.blink {
     opacity: 0;
     transition: opacity 0.2s ease-out;
 }
