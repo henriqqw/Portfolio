@@ -112,6 +112,7 @@ function initTerminal(lang) {
 function updateLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('preferred-lang', lang);
+    document.documentElement.lang = currentLang === 'EN' ? 'en' : 'pt-BR';
     const t = translations[lang];
 
     // Navigation

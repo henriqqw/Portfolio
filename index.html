@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>caosdev — Portfolio & Cyber Security Specialist | Axion Developer</title>
+    <title>caosdev — AI Developer & Cyber Security Specialist</title>
     <meta name="description"
-        content="Portfolio de caosdev - Especialista em Cyber Segurança, Pentest, Ethical Hacking e Desenvolvedor do Axion (A Evolução do Markdown). Focado em segurança ofensiva e defensiva.">
+        content="Portfolio de caosdev - AI Developer e Software Engineer focado em IA, pesquisa de segurança, engenharia de prompts e design de sistemas modernos.">
     <meta name="keywords"
         content="caosdev, portfolio, cyber segurança, pentest, ethical hacking, forense, devsecops, Axion Markdown, animecaos, segurança ofensiva, segurança defensiva, prompt engineering, software developer, automation">
     <meta name="author" content="caosdev">
@@ -18,33 +18,64 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "caosdev",
-      "url": "https://caosdev.vercel.app/",
-      "jobTitle": "Cyber Security Specialist & Developer",
-      "sameAs": [
-        "https://github.com/henriqqw",
-        "https://www.linkedin.com/in/henrique-lanzoni-ab0828371/",
-        "https://x.com/chaosphory"
-      ],
-      "description": "Estudante de Cyber Segurança e desenvolvedor do Axion, uma ferramenta local-first para gerenciamento de conhecimento."
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://caosdev.vercel.app/#person",
+          "name": "caosdev",
+          "url": "https://caosdev.vercel.app/",
+          "jobTitle": "AI Developer & Cyber Security Specialist",
+          "sameAs": [
+            "https://github.com/henriqqw",
+            "https://www.linkedin.com/in/henrique-lanzoni-ab0828371/",
+            "https://x.com/chaosphory"
+          ],
+          "description": "Desenvolvedor de Software focado em IA, pesquisa de segurança, engenharia de prompts e design de sistemas modernos com RAG."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://caosdev.vercel.app/#website",
+          "url": "https://caosdev.vercel.app/",
+          "name": "caosdev - Portfolio Pessoal",
+          "publisher": {
+            "@id": "https://caosdev.vercel.app/#person"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "SiteNavigationElement",
+              "position": 1,
+              "name": "Projetos",
+              "url": "https://caosdev.vercel.app/projetos.html"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 2,
+              "name": "Contato",
+              "url": "https://caosdev.vercel.app/contact.html"
+            }
+          ]
+        }
+      ]
     }
     </script>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://caosdev.vercel.app/">
-    <meta property="og:title" content="caosdev — Portfolio & Cyber Security Specialist">
+    <meta property="og:title" content="caosdev — AI Developer & Cyber Security Specialist">
     <meta property="og:description"
-        content="Explore os projetos de caosdev, incluindo o Axion. Especialista em Cyber Segurança, Pentest e Ethical Hacking.">
+        content="Explore o trabalho de caosdev. Software Engineer focado em IA, Cyber Security, Prompt Engineering e arquiteturas RAG.">
     <meta property="og:image" content="https://caosdev.vercel.app/favicon/favicon_64px.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://caosdev.vercel.app/">
-    <meta property="twitter:title" content="caosdev — Portfolio & Cyber Security Specialist">
+    <meta property="twitter:title" content="caosdev — AI Developer & Cyber Security Specialist">
     <meta property="twitter:description"
-        content="Conheça o trabalho de caosdev em Cyber Segurança e o desenvolvimento do Axion.">
+        content="Explore o trabalho de caosdev. Software Engineer focado em IA, Cyber Security, Prompt Engineering e arquiteturas RAG.">
     <meta property="twitter:image" content="https://caosdev.vercel.app/favicon/favicon_64px.png">
 
     <!-- Favicon -->
@@ -57,7 +88,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./styles.css">
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 
 <body>
