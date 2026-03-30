@@ -27,13 +27,20 @@ const translations = {
         },
         projects: {
             security: 'Segurança',
-            webTools: 'Ferramentas',
+            webTools: 'Ferramentas Web',
             landingPages: 'Landing Pages',
             softwares: 'Softwares',
+            dataAnalytics: 'Dados & Análises',
             btnWebsite: 'WEBSITE',
             btnGithub: 'GITHUB',
             descriptions: {
-                axion: 'A evolução do Markdown. Seu cérebro digital, 100% privado e extremamente rápido. Zero bancos de dados, telas gráficas nativas.'
+                axion: 'Base de conhecimento local-first construída em Next.js 15 e TypeScript. Edição rich-text via Tiptap v3, canvas infinito com TLDRAW e Datagrids estilo Notion a partir de Markdown puro. Zero cloud, zero banco de dados — seus arquivos ficam como .md no disco.',
+                animecaos: 'App desktop em Python com PySide6. Usa Selenium para scraping de páginas dinâmicas e BeautifulSoup para parsing de HTML. Agrega múltiplas fontes brasileiras com busca fuzzy via FuzzyWuzzy e integração com a API do AniList para metadados.',
+                xmlrpc: 'Script Python para ataques de força bruta no WordPress via XML-RPC. Ferramenta eficiente e multi-thread para testes de segurança.',
+                winopt: 'Ferramenta segura de otimização do Windows para ambientes corporativos. Ajustes de privacidade e desempenho via CLI.',
+                dashboard: 'Pipeline de analytics first-party para o AnimeCaos. API de ingestão de eventos customizada, dashboard autenticado e zero dependência do Google Analytics.',
+                caoshub: 'Um hub de ferramentas que rodam direto no navegador. Todo o processamento acontece no lado do cliente, sem uploads, sem servidor, sem API. Seus arquivos nunca saem do seu dispositivo.',
+                studioschulze: 'Landing page responsiva e moderna para um estúdio de arquitetura. UX minimalista e elegante.'
             }
         },
         contact: {
@@ -68,10 +75,17 @@ const translations = {
             webTools: 'Web Tools',
             landingPages: 'Landing Pages',
             softwares: 'Softwares',
+            dataAnalytics: 'Data & Analytics',
             btnWebsite: 'WEBSITE',
             btnGithub: 'GITHUB',
             descriptions: {
-                axion: 'The evolution of Markdown. Your digital brain, 100% private and blazingly fast. Zero databases, native graphical canvases.'
+                axion: 'Local-first knowledge base built on Next.js 15 and TypeScript. Rich-text editing via Tiptap v3, infinite canvas with TLDRAW, Notion-style Datagrids from raw Markdown. Zero cloud, zero databases — your files stay as plain .md on disk.',
+                animecaos: 'Desktop app built in Python with PySide6. Uses Selenium for dynamic scraping and BeautifulSoup for HTML parsing. Aggregates multiple Brazilian sources with fuzzy search via FuzzyWuzzy and AniList API integration for metadata.',
+                xmlrpc: 'Python script for WordPress XML-RPC brute force attacks. Efficient and multi-threaded tool for security testing.',
+                winopt: 'Safe Windows optimization tool for corporate environments. Privacy and performance tweaks via CLI.',
+                dashboard: 'First-party analytics pipeline for AnimeCaos. Custom event ingestion API, authenticated dashboard, and zero dependency on Google Analytics.',
+                caoshub: 'A hub of browser-only tools. All processing happens client-side, no uploads, no server, no API. Your files never leave your device.',
+                studioschulze: 'Modern responsive landing page for an Architecture studio. Minimalist and elegant UX.'
             }
         },
         contact: {
@@ -144,18 +158,25 @@ function updateLanguage(lang) {
         }
     });
 
-    // Projects Page
-    const sectionTitles = document.querySelectorAll('.section-title');
-    sectionTitles.forEach(title => {
-        const txt = title.textContent.trim();
-        if (txt === 'Security' || txt === 'Segurança') title.textContent = t.projects.security;
-        if (txt === 'Web Tools' || txt === 'Ferramentas Web' || txt === 'Ferramentas') title.textContent = t.projects.webTools;
-        if (txt === 'Landing Pages' || txt === 'Páginas de Destino') title.textContent = t.projects.landingPages;
-        if (txt === 'Softwares') title.textContent = t.projects.softwares;
+    // Projects Page — generic data-i18n lookup
+    const i18nMap = {
+        'cat.softwares': t.projects.softwares,
+        'cat.security': t.projects.security,
+        'cat.webTools': t.projects.webTools,
+        'cat.landingPages': t.projects.landingPages,
+        'cat.dataAnalytics': t.projects.dataAnalytics,
+        'desc.axion': t.projects.descriptions.axion,
+        'desc.animecaos': t.projects.descriptions.animecaos,
+        'desc.xmlrpc': t.projects.descriptions.xmlrpc,
+        'desc.winopt': t.projects.descriptions.winopt,
+        'desc.dashboard': t.projects.descriptions.dashboard,
+        'desc.caoshub': t.projects.descriptions.caoshub,
+        'desc.studioschulze': t.projects.descriptions.studioschulze
+    };
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18nMap[key] !== undefined) el.textContent = i18nMap[key];
     });
-
-    const descAxion = document.querySelector('.project-card:first-child .project-description');
-    if (descAxion) descAxion.textContent = t.projects.descriptions.axion;
 
     // Contact Page
     const contactTitle = document.querySelector('.contact-title');

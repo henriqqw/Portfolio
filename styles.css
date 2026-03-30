@@ -383,8 +383,16 @@ body {
 }
 
 .caret-line {
-    color: var(--accent);
     margin-right: 6px;
+}
+.prompt-user {
+    color: var(--ok);
+}
+.prompt-sep {
+    color: #ffffff;
+}
+.prompt-path {
+    color: #2F5CC0;
 }
 
 .blink {
