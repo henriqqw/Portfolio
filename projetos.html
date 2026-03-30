@@ -85,7 +85,7 @@
             <!-- Softwares Category -->
             <section class="project-section">
                 <div class="section-header">
-                    <h2 class="section-title">Softwares</h2>
+                    <h2 class="section-title" data-i18n="cat.softwares">Softwares</h2>
                 </div>
                 <div class="projects-grid">
                     <!-- Project: Axion -->
@@ -106,17 +106,38 @@
                                 <h3 class="project-title">Axion</h3>
                                 <div class="project-status"><span class="live-dot">●</span>LIVE</div>
                             </div>
-                            <p class="project-description">The evolution of Markdown. Your digital brain, 100% private
-                                and blazingly fast. Zero databases, native graphical canvases.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Markdown</span>
-                                <span class="tech-tag">Tiptap</span>
-                                <span class="tech-tag">Local-First</span>
-                            </div>
+                            <p class="project-description" data-i18n="desc.axion">Local-first knowledge base built on Next.js 15 and TypeScript. Rich-text editing via Tiptap v3, infinite canvas with TLDRAW, Notion-style Datagrids from raw Markdown. Zero cloud, zero databases — your files stay as plain .md on disk.</p>
                             <div class="project-links">
                                 <a href="https://getaxion.vercel.app/en" target="_blank"
                                     class="project-link">WEBSITE</a>
                                 <a href="https://github.com/henriqqw/Axion-Releases" target="_blank"
+                                    class="project-link">GITHUB</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project: AnimeCaos -->
+                    <div class="project-card">
+                        <div class="window-chrome" role="toolbar" aria-label="Controles da janela">
+                            <div class="window-controls-left">
+                                <span class="dot dot-red" aria-hidden="true"></span>
+                                <span class="dot dot-yellow" aria-hidden="true"></span>
+                                <span class="dot dot-green" aria-hidden="true"></span>
+                            </div>
+                            <span class="window-title">AnimeCaos</span>
+                        </div>
+                        <div class="project-thumbnail">
+                            <img src="src/images/animecaos.webp" alt="AnimeCaos">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">AnimeCaos</h3>
+                                <div class="project-status"><span class="live-dot">●</span>LIVE</div>
+                            </div>
+                            <p class="project-description" data-i18n="desc.animecaos">Desktop app built in Python with PySide6. Uses Selenium for dynamic scraping and BeautifulSoup for HTML parsing. Aggregates multiple Brazilian sources with fuzzy search via FuzzyWuzzy and AniList API integration for metadata.</p>
+                            <div class="project-links">
+                                <a href="https://animecaos.vercel.app/" target="_blank"
+                                    class="project-link">WEBSITE</a>
+                                <a href="https://github.com/henriqqw/animecaos" target="_blank"
                                     class="project-link">GITHUB</a>
                             </div>
                         </div>
@@ -127,7 +148,7 @@
             <!-- Security Category -->
             <section class="project-section">
                 <div class="section-header">
-                    <h2 class="section-title">Security</h2>
+                    <h2 class="section-title" data-i18n="cat.security">Security</h2>
                 </div>
                 <div class="projects-grid">
                     <!-- Project 1: XMLRPC-Bruteforce -->
@@ -148,12 +169,7 @@
                                 <h3 class="project-title">XMLRPC-Bruteforce</h3>
                                 <div class="project-status"><span class="live-dot">●</span>LIVE</div>
                             </div>
-                            <p class="project-description">Python script for WordPress XML-RPC brute force attacks.
-                                Efficient and multi-threaded tool for security testing.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Pentest</span>
-                            </div>
+                            <p class="project-description" data-i18n="desc.xmlrpc">Python script for WordPress XML-RPC brute force attacks. Efficient and multi-threaded tool for security testing.</p>
                             <div class="project-links">
                                 <a href="https://github.com/henriqqw/XMLRPC-Bruteforce" target="_blank"
                                     class="project-link">GITHUB</a>
@@ -179,12 +195,7 @@
                                 <h3 class="project-title">WinOPT Core</h3>
                                 <div class="project-status"><span class="live-dot">●</span>LIVE</div>
                             </div>
-                            <p class="project-description">Safe Windows optimization tool for corporate environments.
-                                Privacy and performance tweaks via CLI.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Batch</span>
-                                <span class="tech-tag">Systems</span>
-                            </div>
+                            <p class="project-description" data-i18n="desc.winopt">Safe Windows optimization tool for corporate environments. Privacy and performance tweaks via CLI.</p>
                             <div class="project-links">
                                 <a href="https://github.com/henriqqw/WinOPT-Enterprise" target="_blank"
                                     class="project-link">GITHUB</a>
@@ -194,13 +205,13 @@
                 </div>
             </section>
 
-            <!-- Web Tools Category -->
+            <!-- Data & Analytics Category -->
             <section class="project-section">
                 <div class="section-header">
-                    <h2 class="section-title">Web Tools</h2>
+                    <h2 class="section-title" data-i18n="cat.dataAnalytics">Data & Analytics</h2>
                 </div>
                 <div class="projects-grid">
-                    <!-- Project: AnimeCaos -->
+                    <!-- Project: AnimeCaos Dashboard -->
                     <div class="project-card">
                         <div class="window-chrome" role="toolbar" aria-label="Controles da janela">
                             <div class="window-controls-left">
@@ -208,31 +219,31 @@
                                 <span class="dot dot-yellow" aria-hidden="true"></span>
                                 <span class="dot dot-green" aria-hidden="true"></span>
                             </div>
-                            <span class="window-title">AnimeCaos</span>
+                            <span class="window-title">AnimeCaos Dashboard</span>
                         </div>
                         <div class="project-thumbnail">
-                            <img src="src/images/animecaos.webp" alt="AnimeCaos">
+                            <img src="src/images/dashboard.webp" alt="AnimeCaos Dashboard">
                         </div>
                         <div class="project-content">
                             <div class="project-header">
-                                <h3 class="project-title">AnimeCaos</h3>
+                                <h3 class="project-title">AnimeCaos Dashboard</h3>
                                 <div class="project-status"><span class="live-dot">●</span>LIVE</div>
                             </div>
-                            <p class="project-description">Anime hub that searches and extracts links straight from the
-                                source, delivering an ad-free player with download support.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Scraper</span>
-                            </div>
+                            <p class="project-description" data-i18n="desc.dashboard">First-party analytics pipeline for AnimeCaos. Custom event ingestion API, authenticated dashboard, and zero dependency on Google Analytics.</p>
                             <div class="project-links">
-                                <a href="https://animecaos.vercel.app/" target="_blank"
-                                    class="project-link">WEBSITE</a>
-                                <a href="https://github.com/henriqqw/animecaos" target="_blank"
-                                    class="project-link">GITHUB</a>
+                                <a href="https://github.com/henriqqw/dashboard_animecaos" target="_blank" class="project-link">GITHUB</a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
+            <!-- Web Tools Category -->
+            <section class="project-section">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="cat.webTools">Web Tools</h2>
+                </div>
+                <div class="projects-grid">
                     <!-- Project: CaosHub -->
                     <div class="project-card">
                         <div class="window-chrome" role="toolbar" aria-label="Controles da janela">
@@ -251,89 +262,21 @@
                                 <h3 class="project-title">CaosHub</h3>
                                 <div class="project-status"><span class="live-dot">●</span>LIVE</div>
                             </div>
-                            <p class="project-description">Central de links, portfólio e ferramentas de caosdev. Navegação rápida para todos os projetos e experimentos.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">Vercel</span>
-                                <span class="tech-tag">Portfolio</span>
-                            </div>
+                            <p class="project-description" data-i18n="desc.caoshub">Um hub de ferramentas que rodam direto no navegador. Todo o processamento acontece no lado do cliente, sem uploads, sem servidor, sem API. Seus arquivos nunca saem do seu dispositivo.</p>
                             <div class="project-links">
                                 <a href="https://caoshub.vercel.app/" target="_blank" class="project-link">WEBSITE</a>
+                                <a href="https://github.com/henriqqw/CaosHub" target="_blank" class="project-link">GITHUB</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2: EasyWebP Converter -->
-                    <div class="project-card">
-                        <div class="window-chrome" role="toolbar" aria-label="Controles da janela">
-                            <div class="window-controls-left">
-                                <span class="dot dot-red" aria-hidden="true"></span>
-                                <span class="dot dot-yellow" aria-hidden="true"></span>
-                                <span class="dot dot-green" aria-hidden="true"></span>
-                            </div>
-                            <span class="window-title">EasyWebP</span>
-                        </div>
-                        <div class="project-thumbnail">
-                            <img src="src/images/easywebp.webp" alt="EasyWebP Converter">
-                        </div>
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h3 class="project-title">EasyWebP</h3>
-                                <div class="project-status"><span class="live-dot">●</span>LIVE</div>
-                            </div>
-                            <p class="project-description">In-browser image to WebP converter. 100% local processing for
-                                maximum privacy.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">JS</span>
-                                <span class="tech-tag">WebP</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://easywebp.vercel.app/" target="_blank" class="project-link">WEBSITE</a>
-                                <a href="https://github.com/henriqqw/EasyWebPConverter" target="_blank"
-                                    class="project-link">GITHUB</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 0: FrameExtractor -->
-                    <div class="project-card">
-                        <div class="window-chrome" role="toolbar" aria-label="Controles da janela">
-                            <div class="window-controls-left">
-                                <span class="dot dot-red" aria-hidden="true"></span>
-                                <span class="dot dot-yellow" aria-hidden="true"></span>
-                                <span class="dot dot-green" aria-hidden="true"></span>
-                            </div>
-                            <span class="window-title">FrameExtractor</span>
-                        </div>
-                        <div class="project-thumbnail">
-                            <img src="src/images/frameextractor.webp" alt="FrameExtractor">
-                        </div>
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h3 class="project-title">FrameExtractor</h3>
-                                <div class="project-status"><span class="live-dot">●</span>LIVE</div>
-                            </div>
-                            <p class="project-description">Secure Client-Side Video Frame Extraction. No uploads, no
-                                cloud, just privacy.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Canvas</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://framextractor.vercel.app/" target="_blank"
-                                    class="project-link">WEBSITE</a>
-                                <a href="https://github.com/henriqqw/FrameExtractor" target="_blank"
-                                    class="project-link">GITHUB</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
             <!-- Landing Pages Category -->
             <section class="project-section">
                 <div class="section-header">
-                    <h2 class="section-title">Landing Pages</h2>
+                    <h2 class="section-title" data-i18n="cat.landingPages">Landing Pages</h2>
                 </div>
                 <div class="projects-grid">
                     <!-- Project 3: Studio Schulze -->
@@ -354,12 +297,7 @@
                                 <h3 class="project-title">Studio Schulze</h3>
                                 <div class="project-status"><span class="live-dot">●</span>LIVE</div>
                             </div>
-                            <p class="project-description">Modern responsive landing page for an Architecture studio.
-                                Minimalist and elegant UX.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">UX</span>
-                                <span class="tech-tag">Design</span>
-                            </div>
+                            <p class="project-description" data-i18n="desc.studioschulze">Modern responsive landing page for an Architecture studio. Minimalist and elegant UX.</p>
                             <div class="project-links">
                                 <a href="https://studioschulze.com.br/" target="_blank" class="project-link">WEBSITE</a>
                                 <a href="https://github.com/henriqqw/StudioSchulze-Landing-Page" target="_blank"
