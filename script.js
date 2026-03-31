@@ -38,7 +38,6 @@ const translations = {
                 animecaos: 'App desktop em Python com PySide6. Usa Selenium para scraping de páginas dinâmicas e BeautifulSoup para parsing de HTML. Agrega múltiplas fontes brasileiras com busca fuzzy via FuzzyWuzzy e integração com a API do AniList para metadados.',
                 xmlrpc: 'Script Python para ataques de força bruta no WordPress via XML-RPC. Ferramenta eficiente e multi-thread para testes de segurança.',
                 winopt: 'Ferramenta segura de otimização do Windows para ambientes corporativos. Ajustes de privacidade e desempenho via CLI.',
-                dashboard: 'Pipeline de analytics first-party para o AnimeCaos. API de ingestão de eventos customizada, dashboard autenticado e zero dependência do Google Analytics.',
                 caoshub: 'Um hub de ferramentas que rodam direto no navegador. Todo o processamento acontece no lado do cliente, sem uploads, sem servidor, sem API. Seus arquivos nunca saem do seu dispositivo.',
                 studioschulze: 'Landing page responsiva e moderna para um estúdio de arquitetura. UX minimalista e elegante.'
             }
@@ -83,7 +82,6 @@ const translations = {
                 animecaos: 'Desktop app built in Python with PySide6. Uses Selenium for dynamic scraping and BeautifulSoup for HTML parsing. Aggregates multiple Brazilian sources with fuzzy search via FuzzyWuzzy and AniList API integration for metadata.',
                 xmlrpc: 'Python script for WordPress XML-RPC brute force attacks. Efficient and multi-threaded tool for security testing.',
                 winopt: 'Safe Windows optimization tool for corporate environments. Privacy and performance tweaks via CLI.',
-                dashboard: 'First-party analytics pipeline for AnimeCaos. Custom event ingestion API, authenticated dashboard, and zero dependency on Google Analytics.',
                 caoshub: 'A hub of browser-only tools. All processing happens client-side, no uploads, no server, no API. Your files never leave your device.',
                 studioschulze: 'Modern responsive landing page for an Architecture studio. Minimalist and elegant UX.'
             }
@@ -128,6 +126,7 @@ function initTerminal(lang) {
 function updateLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('preferred-lang', lang);
+    if (window.trackEvent) trackEvent("language_change", { metadata: { lang } });
     document.documentElement.lang = currentLang === 'EN' ? 'en' : 'pt-BR';
     const t = translations[lang];
 
@@ -164,12 +163,10 @@ function updateLanguage(lang) {
         'cat.security': t.projects.security,
         'cat.webTools': t.projects.webTools,
         'cat.landingPages': t.projects.landingPages,
-        'cat.dataAnalytics': t.projects.dataAnalytics,
         'desc.axion': t.projects.descriptions.axion,
         'desc.animecaos': t.projects.descriptions.animecaos,
         'desc.xmlrpc': t.projects.descriptions.xmlrpc,
         'desc.winopt': t.projects.descriptions.winopt,
-        'desc.dashboard': t.projects.descriptions.dashboard,
         'desc.caoshub': t.projects.descriptions.caoshub,
         'desc.studioschulze': t.projects.descriptions.studioschulze
     };
@@ -408,6 +405,7 @@ function processCommand(cmd) {
 
     // Add command to history
     addHistoryEntry(`caos@root:~# ${cmd}`);
+    if (window.trackEvent) trackEvent("terminal_command", { metadata: { command: mainCmd } });
 
     // Handle commands
     switch (mainCmd) {
