@@ -2,8 +2,7 @@
 // Substitua as duas constantes abaixo pelas suas credenciais.
 // Como este é um site estático (client-side only), o WRITE_KEY ficará
 // exposto no bundle — use um key com permissão somente de escrita.
-const ANALYTICS_ENDPOINT = "http://74.234.32.215/api/v1/events";
-const WRITE_KEY = "79cb76434616a567049793968cb1997e4d3836e61b5da748";
+const ANALYTICS_ENDPOINT = "/api/track";
 
 function getOrCreateStorageId(key, storage) {
   try {
@@ -24,8 +23,7 @@ async function trackEvent(eventName, options = {}) {
     await fetch(ANALYTICS_ENDPOINT, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "X-Analytics-Key": WRITE_KEY
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         eventName,
