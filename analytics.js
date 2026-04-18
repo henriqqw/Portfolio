@@ -1,7 +1,3 @@
-// ─── Analytics ────────────────────────────────────────────────
-// Substitua as duas constantes abaixo pelas suas credenciais.
-// Como este é um site estático (client-side only), o WRITE_KEY ficará
-// exposto no bundle — use um key com permissão somente de escrita.
 const ANALYTICS_ENDPOINT = "/api/track";
 
 function getOrCreateStorageId(key, storage) {
