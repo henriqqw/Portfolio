@@ -146,6 +146,48 @@
   }
 
 
+  /* ——— Terminal macOS window controls ——— */
+  document.querySelectorAll('.terminal-controls').forEach(function (controls) {
+    var win = controls.closest('.terminal, .lab-window');
+    if (!win) return;
+
+    var body = win.querySelector('.terminal-body, .tech-card-body, pre');
+    var redBtn = controls.querySelector('.red');
+    var yellowBtn = controls.querySelector('.yellow');
+    var greenBtn = controls.querySelector('.green');
+
+    // Red: Close / reset
+    if (redBtn) {
+      redBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (body) {
+          body.style.display = body.style.display === 'none' ? '' : 'none';
+        }
+      });
+    }
+
+    // Yellow: Minimize / collapse
+    if (yellowBtn) {
+      yellowBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (body) {
+          body.style.display = body.style.display === 'none' ? '' : 'none';
+        }
+      });
+    }
+
+    // Green: Expand / restore
+    if (greenBtn) {
+      greenBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (body) {
+          body.style.display = '';
+        }
+      });
+    }
+  });
+
+
   /* ——— Footer year ——— */
   var yearEl = document.getElementById('year');
   if (yearEl) {
