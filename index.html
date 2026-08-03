@@ -1,270 +1,604 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>caosdev — AI Developer & Cyber Security Specialist</title>
-    <meta name="description"
-        content="Portfolio de caosdev - AI Developer e Software Engineer focado em IA, pesquisa de segurança, engenharia de prompts e design de sistemas modernos.">
-    <meta name="keywords"
-        content="caosdev, portfolio, cyber segurança, pentest, ethical hacking, forense, devsecops, Axion Markdown, animecaos, segurança ofensiva, segurança defensiva, prompt engineering, software developer, automation">
-    <meta name="author" content="caosdev">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="aKSh1c77D7HrmDemHcz8n7BgG1RSW0yw934WFZDX87w" />
-    <link rel="canonical" href="https://caosdev.vercel.app/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henrique Lanzoni — FullStack Software Engineer</title>
+  <meta name="description" content="Portfolio de Henrique Lanzoni — software, automacao e pesquisa de seguranca.">
+  <meta name="author" content="Henrique Lanzoni">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#16171d">
+  <link rel="canonical" href="https://henriquelanzoni.vercel.app/">
 
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://caosdev.vercel.app/#person",
-          "name": "caosdev",
-          "url": "https://caosdev.vercel.app/",
-          "jobTitle": "AI Developer & Cyber Security Specialist",
-          "sameAs": [
-            "https://github.com/henriqqw",
-            "https://www.linkedin.com/in/henrique-lanzoni-ab0828371/",
-            "https://x.com/chaosphory"
-          ],
-          "description": "Desenvolvedor de Software focado em IA, pesquisa de segurança, engenharia de prompts e design de sistemas modernos com RAG."
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://caosdev.vercel.app/#website",
-          "url": "https://caosdev.vercel.app/",
-          "name": "caosdev - Portfolio Pessoal",
-          "publisher": {
-            "@id": "https://caosdev.vercel.app/#person"
-          }
-        },
-        {
-          "@type": "ItemList",
-          "itemListElement": [
-            {
-              "@type": "SiteNavigationElement",
-              "position": 1,
-              "name": "Projetos",
-              "url": "https://caosdev.vercel.app/projetos.html"
-            },
-            {
-              "@type": "SiteNavigationElement",
-              "position": 2,
-              "name": "Contato",
-              "url": "https://caosdev.vercel.app/contact.html"
-            }
-          ]
-        }
-      ]
-    }
-    </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://henriquelanzoni.vercel.app/">
+  <meta property="og:title" content="Henrique Lanzoni — FullStack Software Engineer">
+  <meta property="og:description" content="Portfolio de Henrique Lanzoni — software, automacao e pesquisa de seguranca.">
+  <meta property="og:image" content="https://henriquelanzoni.vercel.app/favicon/favicon_64px.png">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://caosdev.vercel.app/">
-    <meta property="og:title" content="caosdev — AI Developer & Cyber Security Specialist">
-    <meta property="og:description"
-        content="Explore o trabalho de caosdev. Software Engineer focado em IA, Cyber Security, Prompt Engineering e arquiteturas RAG.">
-    <meta property="og:image" content="https://caosdev.vercel.app/favicon/favicon_64px.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://henriquelanzoni.vercel.app/">
+  <meta property="twitter:title" content="Henrique Lanzoni — FullStack Software Engineer">
+  <meta property="twitter:description" content="Portfolio de Henrique Lanzoni — software, automacao e pesquisa de seguranca.">
+  <meta property="twitter:image" content="https://henriquelanzoni.vercel.app/favicon/favicon_64px.png">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://caosdev.vercel.app/">
-    <meta property="twitter:title" content="caosdev — AI Developer & Cyber Security Specialist">
-    <meta property="twitter:description"
-        content="Explore o trabalho de caosdev. Software Engineer focado em IA, Cyber Security, Prompt Engineering e arquiteturas RAG.">
-    <meta property="twitter:image" content="https://caosdev.vercel.app/favicon/favicon_64px.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon_32px.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon_64px.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon_32px.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="./favicon/favicon_64px.png">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
 
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
-
 <body>
-    <header class="site-header">
-        <div class="brand-wrapper">
-            <img src="./favicon/favicon_32px.png" alt="caosdev icon" class="brand-icon-img" width="16" height="16">
-            <div class="brand" id="brand-text"></div>
-        </div>
-        <nav class="nav">
-            <a href="./index.html">home</a>
-            <a href="./index.html#links">social</a>
-            <a href="./projetos.html">projects</a>
-            <a href="./contact.html">contact</a>
-        </nav>
-        <div class="header-actions">
-            <div class="lang-toggle">
-                <span class="lang-option active">PT</span>
-                <span class="lang-option">EN</span>
-            </div>
-            <button class="hamburger-menu" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
 
-    <main class="container">
-        <pre class="ascii-title">
-                                         █████                     
-                                        ░░███                      
-  ██████   ██████    ██████   █████   ███████   ██████  █████ █████
- ███░░███ ░░░░░███  ███░░███ ███░░   ███░░███  ███░░███░░███ ░░███ 
-░███ ░░░   ███████ ░███ ░███░░█████ ░███ ░███ ░███████  ░███  ░███ 
-░███  ███ ███░░███ ░███ ░███ ░░░░███░███ ░███ ░███░░░   ░░███ ███  
-░░██████ ░░████████░░██████  ██████ ░░████████░░██████   ░░█████   
- ░░░░░░   ░░░░░░░░  ░░░░░░  ░░░░░░   ░░░░░░░░  ░░░░░░     ░░░░░    
-        </pre>
-        <section class="window" aria-label="Janela estilo macOS">
-            <div class="window-chrome" role="toolbar" aria-label="Controles da janela">
-                <div class="window-controls-left">
-                    <span class="dot dot-red" aria-hidden="true"></span>
-                    <span class="dot dot-yellow" aria-hidden="true"></span>
-                    <span class="dot dot-green" aria-hidden="true"></span>
-                </div>
-                <span class="window-title">/usr/bin/portfolio — caosdev</span>
-                <div class="window-controls-right">
-                    <button class="window-btn minimize" aria-label="Minimizar">
-                        <svg viewBox="0 0 12 12" width="12" height="12">
-                            <rect x="2" y="5.5" width="8" height="1" fill="currentColor" />
-                        </svg>
-                    </button>
-                    <button class="window-btn maximize" aria-label="Maximizar">
-                        <svg viewBox="0 0 12 12" width="12" height="12">
-                            <rect x="2" y="2" width="8" height="8" fill="none" stroke="currentColor" stroke-width="1" />
-                        </svg>
-                    </button>
-                    <button class="window-btn close" aria-label="Fechar">
-                        <svg viewBox="0 0 12 12" width="12" height="12">
-                            <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="terminal" role="region" aria-live="polite">
-                <div class="terminal-inner">
-                    <pre class="prompt" aria-label="Terminal output">
-<code><span class="caret-line"><span class="prompt-user">caos@caos</span><span class="prompt-sep">:</span><span class="prompt-path">~$</span></span> <span class="muted" id="npm-1"></span>
-<span class="muted" id="npm-2"></span>
-<span class="muted" id="npm-3"></span>
+  <!-- ======================== HEADER ======================== -->
+  <nav id="mainNav" class="site-nav">
+    <div id="scrollProgress" class="scroll-progress"></div>
+    <a href="#hero" class="brand">
+      <img src="/favicon/favicon.svg" alt="Logo" class="brand-icon" width="22" height="22">
+      <span>HENRIQUE LANZONI</span>
+    </a>
 
-<span class="ok">[OK]</span> <span class="boot-text" id="text-1">loading profile: </span><span class="accent" id="profile-name"></span>
-<span class="ok">[OK]</span> <span class="boot-text" id="text-2">initializing terminal...</span>
-<span class="ok">[OK]</span> <span class="boot-text" id="text-3">loading dependencies...</span>
-<span class="ok">[OK]</span> <span class="boot-text" id="text-4">connecting to database...</span>
-<span class="ok">[OK]</span> <span class="boot-text" id="text-5">server running on port 3000</span>
-<span class="ok">[OK]</span> <span class="boot-text" id="text-6">status: </span><span class="accent" id="status-text"></span> <span id="status-icon-container"></span>
+    <button id="navToggle" class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
 
-<span class="caret-line" id="prompt-line">caos@root:~#</span> <span id="whoami-cmd"></span><span id="typed"></span>
-<span id="hint-text" class="accent"></span><span class="blink" id="main-blink">▊</span>
-
-<div id="interactive-terminal" class="hidden">
-    <div id="terminal-history"></div>
-    <div class="input-line">
-        <span class="caret-line"><span class="prompt-user">caos@caos</span><span class="prompt-sep">:</span><span class="prompt-path">~$</span></span>
-        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+    <div id="navLinks" class="navlinks">
+      <a href="#about">SOBRE</a>
+      <a href="#projects">PROJETOS</a>
+      <a href="#lab">SECURITY</a>
+      <a href="#stack">STACK</a>
+      <a href="#journey">JORNADA</a>
+      <a href="#contact">CONTATO</a>
     </div>
-</div>
-</code>
-                    </pre>
-                </div>
+  </nav>
+
+  <main>
+
+    <!-- ======================== HERO ======================== -->
+    <section id="hero" class="hero shell">
+      <div class="hero-copy reveal">
+        <p class="kicker">// SOFTWARE · AUTOMACAO · SECURITY</p>
+        <h1>FullStack<br><em>Software Engineer.</em></h1>
+        <p>
+          Engenheiro de Software Full Stack especializado no desenvolvimento de
+          aplicacoes web escalaveis, sistemas de automacao ponta a ponta, APIs REST,
+          agentes de IA e infraestrutura Linux.
+        </p>
+        <div class="actions">
+          <a class="button button-main" href="#projects">ver projetos <b>↓</b></a>
+          <a class="button" href="#contact">falar comigo <b>→</b></a>
+        </div>
+      </div>
+
+      <aside class="terminal reveal" aria-label="Resumo do perfil em um terminal">
+        <div class="terminal-bar">
+          <div class="terminal-controls">
+            <i class="red" title="Fechar"></i>
+            <i class="yellow" title="Minimizar"></i>
+            <i class="green" title="Ampliar"></i>
+          </div>
+          <span class="terminal-title">lanzoni@root:~</span>
+        </div>
+        <div class="terminal-body">
+          <p><b>lanzoni@root</b>:<strong>~$</strong> whoami</p>
+          <p class="answer">fullstack software engineer</p>
+          <p><b>lanzoni@root</b>:<strong>~$</strong> focus --current</p>
+          <p class="answer">python · golang · ts · docker · llm</p>
+          <p><b>lanzoni@root</b>:<strong>~$</strong> status</p>
+          <p class="answer">
+            <span class="status-dot"></span> Open to Work<span class="cursor"></span>
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ======================== SOBRE ======================== -->
+    <section id="about" class="section shell">
+      <header class="section-title reveal">
+        <p class="kicker">// 01. SOBRE</p>
+        <h2>Engenharia de software<br>com foco em resultado.</h2>
+      </header>
+
+      <div class="about-content reveal">
+        <div>
+          <p class="intro">
+            Engenheiro de Software Full Stack com experiencia no desenvolvimento de solucoes
+            completas para e-commerce, logistica, analytics e automacao de processos. Meu foco
+            e unir backend robusto (Clean Architecture & SOLID), integracoes de IA/LLMs e
+            praticas de desenvolvimento seguro.
+          </p>
+          <p class="muted">
+            Experiencia na construcao de microsservicos, web scraping avancado,
+            infraestrutura self-hosted em Linux/Docker e pipelines de dados first-party.
+          </p>
+        </div>
+
+        <aside class="terminal">
+          <div class="terminal-bar">
+            <div class="terminal-controls">
+              <i class="red" title="Fechar"></i>
+              <i class="yellow" title="Minimizar"></i>
+              <i class="green" title="Ampliar"></i>
             </div>
-        </section>
+            <span class="terminal-title">stack-overview.sh</span>
+          </div>
 
-        <section class="cta-card panel">
-            <h2>Ver Projetos</h2>
-            <p>Explore meus projetos e veja o que eu tenho feito.</p>
-            <a href="/projetos.html" class="project-link">[ VER PROJETOS ]</a>
-        </section>
+          <div class="tech-card-body">
+            <div class="tech-status-bar">
+              <span class="tech-group-title">status atual</span>
+              <div class="status-badge">
+                <span class="status-dot"></span> Open to Work
+              </div>
+            </div>
 
-        <section id="links" class="panel">
-            <h2>social</h2>
-            <ul class="links">
-                <li>
-                    <a href="https://github.com/henriqqw" target="_blank" rel="noopener" aria-label="GitHub">
-                        <span class="icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                        </span>
-                        <span class="label">github</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/henriqqw" target="_blank" rel="noopener" aria-label="Instagram">
-                        <span class="icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                        </span>
-                        <span class="label">instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://x.com/chaosphory" target="_blank" rel="noopener" aria-label="X">
-                        <span class="icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16"/><path d="M4 20L20 4"/></svg>
-                        </span>
-                        <span class="label">x</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://discord.com/users/chaosphory" target="_blank" rel="noopener" aria-label="Discord">
-                        <span class="icon" aria-hidden="true">
-                            <i data-lucide="message-square"></i>
-                        </span>
-                        <span class="label">discord</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/henrique-lanzoni-ab0828371/" target="_blank" rel="noopener"
-                        aria-label="LinkedIn">
-                        <span class="icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                        </span>
-                        <span class="label">linkedin</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:lanzonicmpny13@gmail.com" aria-label="Email">
-                        <span class="icon" aria-hidden="true">
-                            <i data-lucide="mail"></i>
-                        </span>
-                        <span class="label">email</span>
-                    </a>
-                </li>
+            <div class="tech-group">
+              <span class="tech-group-title">Linguagens & Web</span>
+              <div class="tech-pill-grid">
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="16" height="16">
+                  <span>Python</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" width="16" height="16">
+                  <span>Go</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="16" height="16">
+                  <span>JavaScript</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="16" height="16">
+                  <span>TypeScript</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="16" height="16">
+                  <span>HTML5</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="16" height="16">
+                  <span>CSS3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-group">
+              <span class="tech-group-title">Banco de Dados</span>
+              <div class="tech-pill-grid">
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="16" height="16">
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" width="16" height="16">
+                  <span>SQLite</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-group">
+              <span class="tech-group-title">Infraestrutura & DevOps</span>
+              <div class="tech-pill-grid">
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="16" height="16">
+                  <span>Docker</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="16" height="16">
+                  <span>Linux</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" width="16" height="16">
+                  <span>Nginx</span>
+                </div>
+                <div class="tech-pill">
+                  <img src="https://cdn.simpleicons.org/proxmox/E45100" alt="Proxmox" width="16" height="16">
+                  <span>Proxmox</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== PROJETOS ======================== -->
+    <section id="projects" class="section projects">
+      <div class="shell">
+        <header class="section-title reveal">
+          <p class="kicker">// 02. PROJETOS</p>
+          <h2>Projetos com um<br><em>problema para resolver.</em></h2>
+          <p class="description">
+            Aplicacoes, utilitarios e experimentos que representam o que tenho
+            estudado e colocado em pratica.
+          </p>
+        </header>
+
+        <div class="filter-list reveal" aria-label="Filtrar projetos">
+          <button class="filter active" data-filter="all">todos</button>
+          <button class="filter" data-filter="product">produto</button>
+          <button class="filter" data-filter="security">security</button>
+          <button class="filter" data-filter="tool">ferramenta</button>
+          <button class="filter" data-filter="data">data</button>
+          <button class="filter" data-filter="web">web</button>
+        </div>
+      </div>
+
+      <div class="project-list shell">
+
+        <!-- Axion -->
+        <article class="project reveal" data-tags="product web" data-github="https://github.com/henriqqw/Axion">
+          <img src="/src/assets/images/axion.webp" alt="Tela do Axion" loading="lazy">
+          <div>
+            <header>
+              <small>01 / PRODUTO</small>
+              <div class="project-links">
+                <a href="https://github.com/henriqqw/Axion" target="_blank" rel="noreferrer">github ↗</a>
+                <a href="https://getaxion.vercel.app/en" target="_blank" rel="noreferrer">site ↗</a>
+              </div>
+            </header>
+            <h3>Axion</h3>
+            <p>
+              Base de conhecimento local-first: edicao rica, canvas e dados
+              persistidos como Markdown no disco.
+            </p>
+            <ul>
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>Local-first</li>
             </ul>
-        </section>
+          </div>
+        </article>
 
-        <section class="cta-card panel">
-            <h2>Entre em Contato</h2>
-            <p>Vamos conversar! Envie uma mensagem para discutirmos como posso ajudar.</p>
-            <a href="/contact.html" class="project-link">[ ENTRAR EM CONTATO ]</a>
-        </section>
-    </main>
+        <!-- AnimeCaos -->
+        <article class="project reveal" data-tags="product tool" data-github="https://github.com/henriqqw/AnimeCaos">
+          <img src="/src/assets/images/animecaos.webp" alt="Tela do AnimeCaos" loading="lazy">
+          <div>
+            <header>
+              <small>02 / PRODUTO</small>
+              <div class="project-links">
+                <a href="https://github.com/henriqqw/AnimeCaos" target="_blank" rel="noreferrer">github ↗</a>
+                <a href="https://www.animecaos.xyz/" target="_blank" rel="noreferrer">site ↗</a>
+              </div>
+            </header>
+            <h3>AnimeCaos</h3>
+            <p>
+              Aplicacao desktop que agrega fontes brasileiras, pesquisa conteudo
+              e consulta metadados do AniList.
+            </p>
+            <ul>
+              <li>Python</li>
+              <li>PySide6</li>
+              <li>APIs</li>
+            </ul>
+          </div>
+        </article>
 
-    <footer class="site-footer">
-        <span class="made">made with</span>
-        <span class="heart" aria-label="coração">
-            <svg viewBox="0 0 16 16" width="18" height="18" class="heart-svg" aria-hidden="true">
-                <path d="M8 14L3 9c-1-1-1-3 0-4 1-1 3-1 4 0L8 6l1-1c1-1 3-1 4 0 1 1 1 3 0 4L8 14z" />
-            </svg>
-        </span>
-        <span class="by">by</span>
-        <a class="sig" href="https://github.com/henriqqw" target="_blank" rel="noopener">caosdev</a>
-    </footer>
+        <!-- XMLRPC Bruteforce -->
+        <article class="project reveal" data-tags="security tool" data-github="https://github.com/henriqqw/XMLRPC-Bruteforce">
+          <img src="/src/assets/images/xmlrpc.webp" alt="Projeto XMLRPC Bruteforce" loading="lazy">
+          <div>
+            <header>
+              <small>03 / SECURITY</small>
+              <div class="project-links">
+                <a href="https://github.com/henriqqw/XMLRPC-Bruteforce" target="_blank" rel="noreferrer">github ↗</a>
+              </div>
+            </header>
+            <h3>XMLRPC Bruteforce</h3>
+            <p>
+              Ferramenta de estudo para testes autorizados no endpoint XML-RPC
+              de instalacoes WordPress.
+            </p>
+            <ul>
+              <li>Python</li>
+              <li>CLI</li>
+              <li>Security</li>
+            </ul>
+          </div>
+        </article>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="./analytics.js"></script>
-    <script src="./script.js"></script>
+        <!-- CaosHub -->
+        <article class="project reveal" data-tags="tool web" data-github="https://github.com/henriqqw/caoshub">
+          <img src="/src/assets/images/caoshub.webp" alt="Tela do CaosHub" loading="lazy">
+          <div>
+            <header>
+              <small>04 / FERRAMENTA</small>
+              <div class="project-links">
+                <a href="https://github.com/henriqqw/caoshub" target="_blank" rel="noreferrer">github ↗</a>
+                <a href="https://caoshub.vercel.app/" target="_blank" rel="noreferrer">site ↗</a>
+              </div>
+            </header>
+            <h3>CaosHub</h3>
+            <p>
+              Hub de ferramentas que executa processamento no navegador, sem
+              uploads ou dependencia de servidor.
+            </p>
+            <ul>
+              <li>JavaScript</li>
+              <li>Web APIs</li>
+              <li>Privacy-first</li>
+            </ul>
+          </div>
+        </article>
 
+        <!-- WinOPT Core -->
+        <article class="project reveal" data-tags="tool security" data-github="https://github.com/henriqqw/WinOPT-Enterprise">
+          <img src="/src/assets/images/winopt.webp" alt="Projeto WinOPT Core" loading="lazy">
+          <div>
+            <header>
+              <small>05 / FERRAMENTA</small>
+              <div class="project-links">
+                <a href="https://github.com/henriqqw/WinOPT-Enterprise" target="_blank" rel="noreferrer">github ↗</a>
+              </div>
+            </header>
+            <h3>WinOPT Core</h3>
+            <p>
+              Utilitario para ajustes de privacidade e desempenho em ambientes
+              Windows corporativos.
+            </p>
+            <ul>
+              <li>Windows</li>
+              <li>CLI</li>
+              <li>Hardening</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Analytics Dashboard -->
+        <article class="project reveal" data-tags="data tool" data-github="https://github.com/henriqqw/dashboard_analytics">
+          <img src="/src/assets/images/dashboard.webp" alt="Analytics Dashboard" loading="lazy">
+          <div>
+            <header>
+              <small>06 / DATA</small>
+              <div class="project-links">
+                <a href="https://github.com/henriqqw/dashboard_analytics" target="_blank" rel="noreferrer">github ↗</a>
+              </div>
+            </header>
+            <h3>Analytics Dashboard</h3>
+            <p>
+              Dashboard first-party para rastrear visitas, cliques e instalacoes
+              sem depender de terceiros.
+            </p>
+            <ul>
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>Recharts</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Studio Schulze -->
+        <article class="project reveal" data-tags="web" data-github="https://github.com/henriqqw/studioschulze">
+          <img src="/src/assets/images/studioschulze.webp" alt="Site Studio Schulze" loading="lazy">
+          <div>
+            <header>
+              <small>07 / WEB</small>
+              <div class="project-links">
+                <a href="https://github.com/henriqqw/studioschulze" target="_blank" rel="noreferrer">github ↗</a>
+                <a href="https://studioschulze.com.br/" target="_blank" rel="noreferrer">site ↗</a>
+              </div>
+            </header>
+            <h3>Studio Schulze</h3>
+            <p>
+              Landing page responsiva para um estudio de arquitetura, organizada
+              para apresentar o trabalho com clareza.
+            </p>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <p id="empty-message" class="empty shell" hidden>
+        Nenhum projeto encontrado para esse filtro.
+      </p>
+    </section>
+
+    <!-- ======================== SECURITY LAB & CERTIFICAÇÕES ======================== -->
+    <section id="lab" class="section lab">
+      <div class="shell">
+        <div class="lab-grid">
+          <div class="reveal">
+            <p class="kicker">// 03. SECURITY LAB & CERTIFICACOES</p>
+            <h2>Seguranca e parte<br>da construcao.</h2>
+            <p class="description">
+              Pratico desenvolvimento seguro, hardening de servidores e analise ofensiva.
+              Certificacoes verificaveis em Pentesting, Ciberseguranca e Python para OffSec.
+            </p>
+          </div>
+
+          <div class="lab-window reveal">
+            <div class="terminal-bar">
+              <div class="terminal-controls">
+                <i class="red" title="Fechar"></i>
+                <i class="yellow" title="Minimizar"></i>
+                <i class="green" title="Ampliar"></i>
+              </div>
+              <span class="terminal-title">security-lab.sh</span>
+            </div>
+            <pre><code>$ ./certs --verify
+[+] Solyd: Hacking & Pentest 2.0
+[+] Desec: Pentest Pratico
+[+] Red Team Leaders: Python OffSec
+[+] IBM: Ciberseguranca
+[+] XP Inc: Google Hacking OffSec
+
+status: <b>verified_5_certs_</b></code></pre>
+          </div>
+        </div>
+
+        <div class="certs-grid reveal">
+          <a href="https://solyd.com.br/verificar/eyJ0JpKWYG/" target="_blank" rel="noreferrer" class="cert-card">
+            <img src="/src/assets/images/solyd_treinamentos_logo.webp" alt="Solyd Treinamentos Logo" loading="lazy" class="cert-logo">
+            <div class="cert-info">
+              <h3>Hacking & Pentest 2.0</h3>
+              <p>Solyd Offensive Security · 2025</p>
+            </div>
+            <span class="cert-link">verificar ↗</span>
+          </a>
+
+          <a href="https://desecsecurity.com/valida-certificado/ZBUH-TOOJG-NFOA" target="_blank" rel="noreferrer" class="cert-card">
+            <img src="/src/assets/images/desec_security_logo.webp" alt="Desec Security Logo" loading="lazy" class="cert-logo">
+            <div class="cert-info">
+              <h3>Introdução ao Pentest Prático</h3>
+              <p>Desec Security · 2025</p>
+            </div>
+            <span class="cert-link">verificar ↗</span>
+          </a>
+
+          <a href="https://courses.redteamleaders.com/completion/7b856d4d8ae9a5a9" target="_blank" rel="noreferrer" class="cert-card">
+            <img src="/src/assets/images/red_team_leaders_logo.webp" alt="Red Team Leaders Logo" loading="lazy" class="cert-logo">
+            <div class="cert-info">
+              <h3>Python para Segurança Ofensiva</h3>
+              <p>Red Team Leaders · 2025</p>
+            </div>
+            <span class="cert-link">verificar ↗</span>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/verify/H1L4RIQK40YM" target="_blank" rel="noreferrer" class="cert-card">
+            <img src="/src/assets/images/ibm_logo.webp" alt="IBM Logo" loading="lazy" class="cert-logo">
+            <div class="cert-info">
+              <h3>Fundamentos de Cibersegurança</h3>
+              <p>IBM · 2025</p>
+            </div>
+            <span class="cert-link">verificar ↗</span>
+          </a>
+
+          <a href="https://xpsec.academy/certificate/9dd4fae7da" target="_blank" rel="noreferrer" class="cert-card">
+            <img src="/src/assets/images/xpinc_logo.webp" alt="XP Inc Logo" loading="lazy" class="cert-logo">
+            <div class="cert-info">
+              <h3>Google Hacking para Offsec</h3>
+              <p>XP Inc · 2025</p>
+            </div>
+            <span class="cert-link">verificar ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== STACK ======================== -->
+    <section id="stack" class="section shell">
+      <header class="section-title reveal">
+        <p class="kicker">// 04. STACK</p>
+        <h2>Tecnologias para<br><em>solucoes de impacto.</em></h2>
+      </header>
+
+      <div class="stack reveal">
+        <div>
+          <h3>linguagens</h3>
+          <p>Python</p>
+          <p>Go</p>
+          <p>TypeScript / JS</p>
+          <p>HTML & CSS</p>
+        </div>
+        <div>
+          <h3>backend & arch</h3>
+          <p>APIs REST & Webhooks</p>
+          <p>Clean Arch & SOLID</p>
+          <p>PostgreSQL / SQLite</p>
+          <p>Agentes LLM & RAG</p>
+        </div>
+        <div>
+          <h3>infra & devsec</h3>
+          <p>Docker & Linux</p>
+          <p>Nginx & Self-Hosted</p>
+          <p>CI/CD & GitHub Actions</p>
+          <p>Hardening & OffSec</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== JORNADA ======================== -->
+    <section id="journey" class="section shell">
+      <header class="section-title reveal">
+        <p class="kicker">// 05. JORNADA</p>
+        <h2>Experiencia e<br>evolucao continua.</h2>
+      </header>
+
+      <ol class="timeline reveal">
+        <li>
+          <time>2025 – 2026</time>
+          <div>
+            <h3>Engenheiro de Software — Coutinho Companhia</h3>
+            <p>
+              Desenvolvimento de aplicacoes web, sistemas de automacao escalaveis,
+              integracoes com marketplaces (Mercado Livre, Amazon), agentes de IA
+              e gestao de infraestrutura Linux/Docker em producao.
+            </p>
+          </div>
+        </li>
+        <li>
+          <time>2025</time>
+          <div>
+            <h3>Certificacoes & OffSec</h3>
+            <p>
+              Especializacao em desenvolvimento seguro, Pentest e Ciberseguranca
+              com certificacoes Solyd, Desec, IBM e Red Team Leaders.
+            </p>
+          </div>
+        </li>
+        <li>
+          <time>2025</time>
+          <div>
+            <h3>Projetos Open Source</h3>
+            <p>
+              Criacao de ferramentas como Analytics First-Party, AnimeCaos-dlp
+              e XMLRPC-Bruteforce com foco em alta performance e utilidade real.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ======================== CONTATO ======================== -->
+    <section id="contact" class="section contact">
+      <div class="shell contact-grid">
+        <div class="reveal">
+          <p class="kicker">// 06. CONTATO</p>
+          <h2>Vamos conversar<br>sobre <em>ideias boas.</em></h2>
+          <p class="description">
+            Disponivel para oportunidades, colaboracoes e projetos interessantes.
+          </p>
+        </div>
+
+        <div class="contact-list reveal">
+          <a href="mailto:lanzonicmpny13@gmail.com">
+            <small>EMAIL</small>
+            <span>lanzonicmpny13@gmail.com</span>
+            <b>↗</b>
+          </a>
+          <a href="https://github.com/henriqqw" target="_blank" rel="noreferrer">
+            <small>GITHUB</small>
+            <span>github.com/henriqqw</span>
+            <b>↗</b>
+          </a>
+          <a href="https://www.linkedin.com/in/henrique-lanzoni-ab0828371/" target="_blank" rel="noreferrer">
+            <small>LINKEDIN</small>
+            <span>conectar no LinkedIn</span>
+            <b>↗</b>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Henrique Lanzoni <i>&mdash;</i> built with HTML, CSS & JavaScript
+  </footer>
+
+  <script type="module" src="/src/js/analytics.js"></script>
+  <script type="module" src="/src/js/app.js"></script>
 </body>
-
 </html>

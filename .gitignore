@@ -1,5 +1,13 @@
 # Dependencies
 /node_modules
 
+# Build output
+/dist
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 # Windows artifacts
 *Zone.Identifier

@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /favicon/
-Disallow: /src/
-
-Sitemap: https://caosdev.vercel.app/sitemap.xml

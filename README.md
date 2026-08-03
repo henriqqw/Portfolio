@@ -8,7 +8,7 @@ Personal portfolio website for caosdev - Cyber Security Student focused on Pente
 
 ## 🌐 Live Demo
 
-[https://caosdev.vercel.app/](https://caosdev.vercel.app/)
+[https://henriquelanzoni.vercel.app/](https://henriquelanzoni.vercel.app/)
 
 ## 📝 Description
 
@@ -35,7 +35,7 @@ Cyber Security Student portfolio with macOS window style and terminal/hacking th
 
 ## 🚀 Usage
 
-Open `index.html` in any modern web browser or visit [https://caosdev.vercel.app/](https://caosdev.vercel.app/) to see the live version.
+Open `index.html` in any modern web browser or visit [https://henriquelanzoni.vercel.app/](https://henriquelanzoni.vercel.app/) to see the live version.
 
 ## 📄 License
 

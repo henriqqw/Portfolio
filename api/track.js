@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Analytics-Key": "dcaa2ac009eb122ad6e7dd0d5e7b1b761d03abab41010c09"
+        "X-Analytics-Key": process.env.ANALYTICS_KEY
       },
       body: JSON.stringify(req.body)
     });
