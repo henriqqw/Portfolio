@@ -149,7 +149,7 @@ var DICT = {
   },
 
   'contact.kicker': { pt: '// 06. CONTATO', en: '// 06. CONTACT' },
-  'contact.title':  { pt: 'Vamos conversar<br>sobre <em>ideias boas.</em>', en: "Let's talk<br>about <em>good ideas.</em>" },
+  'contact.title':  { pt: 'Vamos conversar<br>entre em <em>contato.</em>', en: "Let's talk<br>about <em>good ideas.</em>" },
   'contact.description': {
     pt: 'Disponível para oportunidades, colaborações e projetos interessantes.',
     en: 'Available for opportunities, collaborations, and interesting projects.'
