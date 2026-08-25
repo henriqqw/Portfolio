@@ -1,0 +1,13 @@
+# Henrique Lanzoni — Full Stack Software Engineer
+
+> Portfolio de Henrique Lanzoni sobre engenharia de software, automação, segurança e projetos open source.
+
+## Conteúdo
+
+- [Portfolio](https://henriquelanzoni.vercel.app/): Perfil profissional, projetos, certificações, stack, experiência e contato.
+- [GitHub](https://github.com/henriqqw): Repositórios e projetos open source.
+- [LinkedIn](https://www.linkedin.com/in/henrique-lanzoni-ab0828371/): Perfil profissional.
+
+## Contato
+
+- Email: lanzonicmpny13@gmail.com

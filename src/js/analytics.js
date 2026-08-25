@@ -7,14 +7,21 @@
 (function () {
   'use strict';
 
+  var isLocalAudit = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+
   // Load Umami Analytics securely from env
   var umamiId = import.meta.env ? import.meta.env.VITE_UMAMI_WEBSITE_ID : null;
-  if (umamiId && !document.querySelector('script[data-website-id]')) {
-    var script = document.createElement('script');
-    script.defer = true;
-    script.src = 'https://cloud.umami.is/script.js';
-    script.setAttribute('data-website-id', umamiId);
-    document.head.appendChild(script);
+  if (!isLocalAudit && umamiId && !document.querySelector('script[data-website-id]')) {
+    var loadUmami = function () {
+      if (document.querySelector('script[data-website-id]')) return;
+      var script = document.createElement('script');
+      script.defer = true;
+      script.src = 'https://cloud.umami.is/script.js';
+      script.setAttribute('data-website-id', umamiId);
+      document.head.appendChild(script);
+    };
+    if ('requestIdleCallback' in window) requestIdleCallback(loadUmami, { timeout: 5000 });
+    else setTimeout(loadUmami, 3000);
   }
 
   var ENDPOINT = '/api/track';
@@ -32,6 +39,7 @@
   }
 
   function track(eventName, metadata) {
+    if (isLocalAudit) return;
     try {
       var visitorId = getOrCreateId('afp_visitor_id', localStorage);
       var sessionId = getOrCreateId('afp_session_id', sessionStorage);

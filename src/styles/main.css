@@ -1,3 +1,9 @@
+@import '@fontsource-variable/doto/wght.css';
+@import '@fontsource-variable/space-grotesk/wght.css';
+@import '@fontsource/dm-mono/latin-400.css';
+@import '@fontsource/dm-mono/latin-500.css';
+@import '@fontsource/geist-mono/latin-700.css';
+
 /* ============================================================
    caosdev — Portfolio Styles
    Stack: HTML + CSS + JS | Dark terminal/macOS aesthetic
@@ -14,11 +20,12 @@
   --text:     #f3f4f6;
   --muted:    #9ea4b0;
   --line:     #2e313d;
-  --green:    #8df58d;
+  --green:    #ADFF2F;
   --red:      #ff5f57;
   --yellow:   #febc2e;
   --mono:     'DM Mono', monospace;
-  --sans:     'Space Grotesk', sans-serif;
+  --sans:     'Space Grotesk Variable', 'Space Grotesk', sans-serif;
+  --display:  'Doto Variable', 'Doto', monospace;
 }
 
 
@@ -43,6 +50,13 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
+  font-synthesis: none;
+}
+
+.section,
+.projects {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }
 
 a {
@@ -52,6 +66,83 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+
+/* Floating page shortcuts */
+.floating-actions {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-action {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #3a3e4b;
+  border-radius: 10px;
+  background: #24262f;
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: none;
+  transition: color .2s ease, background .2s ease, border-color .2s ease,
+              transform .2s ease, opacity .2s ease, visibility .2s ease;
+}
+
+.floating-action svg {
+  width: 20px;
+  height: 20px;
+}
+
+.floating-action:hover {
+  border-color: #626876;
+  background: #2d303a;
+  transform: translateY(-2px);
+}
+
+.floating-action:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.floating-contact {
+  border-color: var(--green);
+  background: var(--green);
+  color: #16171d;
+}
+
+.floating-contact:hover {
+  border-color: #ADFF2F;
+  background: #ADFF2F;
+}
+
+.back-to-top {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--text);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.back-to-top:hover {
+  border-color: var(--line);
+  background: #272934;
+  color: var(--text);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 
@@ -78,7 +169,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(22, 23, 29, .65);
+  background: rgba(31, 33, 40, .94);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
   transition: background .3s ease, backdrop-filter .3s ease,
@@ -86,7 +177,7 @@ img {
 }
 
 .site-nav.scrolled {
-  background: rgba(22, 23, 29, .95);
+  background: rgba(36, 38, 47, .98);
   backdrop-filter: blur(14px);
   border-bottom-color: var(--line);
   box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
@@ -99,7 +190,7 @@ img {
   height: 2px;
   width: 0%;
   background: var(--green);
-  box-shadow: 0 0 10px rgba(141, 245, 141, 0.7);
+  box-shadow: 0 0 10px rgba(173, 255, 47, 0.7);
   transition: width 0.05s ease-out;
   z-index: 51;
 }
@@ -127,7 +218,7 @@ img {
   height: 8px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 13px rgba(141, 245, 141, .65);
+  box-shadow: 0 0 13px rgba(173, 255, 47, .65);
 }
 
 .navlinks {
@@ -140,7 +231,7 @@ img {
 
 .navlinks a {
   text-decoration: none;
-  opacity: .6;
+  opacity: .78;
   transition: opacity .2s ease;
 }
 
@@ -231,6 +322,10 @@ img {
   padding-block: 130px 100px;
 }
 
+.hero-copy {
+  min-width: 0;
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -255,9 +350,15 @@ img {
 h1,
 h2 {
   margin: 0;
-  font-weight: 600;
-  letter-spacing: -.07em;
+  font-family: var(--display);
+  font-weight: 900;
+  letter-spacing: -.035em;
   line-height: .98;
+}
+
+h3 {
+  font-family: var(--display);
+  font-weight: 800;
 }
 
 h1 {
@@ -272,6 +373,45 @@ h1 em,
 h2 em {
   color: #9ea4b0;
   font-style: normal;
+}
+
+.title-last-line {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.type-cursor {
+  display: inline-block;
+  color: var(--green);
+  animation: type-cursor-blink 1s step-end infinite;
+}
+
+@keyframes type-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.watcher {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 480px;
+}
+
+.ascii-eye {
+  position: relative;
+  width: min(100%, 480px);
+  aspect-ratio: 1;
+  height: auto;
+  opacity: .7;
+}
+
+.ascii-eye canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-copy > p:not(.kicker) {
@@ -315,6 +455,13 @@ h2 em {
 
 .button-main:hover {
   background: #e0e3eb;
+}
+
+button,
+.button {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
 }
 
 
@@ -1028,10 +1175,23 @@ footer i {
   }
 
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     min-height: auto;
-    padding-top: 100px;
-    gap: 46px;
+    padding-block: 72px 64px;
+    gap: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 8.5vw, 3rem);
+  }
+
+  .watcher {
+    display: none;
+  }
+  .ascii-eye {
+    width: min(100%, 280px);
+    aspect-ratio: 1;
+    height: auto;
   }
 
   .about-content,
@@ -1074,6 +1234,18 @@ footer i {
     width: calc(100% - 40px);
   }
 
+  .floating-actions {
+    right: 14px;
+    bottom: 14px;
+    gap: 8px;
+  }
+
+  .floating-action {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+  }
+
   .project-list {
     grid-template-columns: 1fr;
   }
@@ -1083,7 +1255,41 @@ footer i {
   }
 
   .hero h1 {
-    font-size: 2.6rem;
+    max-width: 100%;
+    font-size: clamp(1.75rem, 8.5vw, 3rem);
+  }
+
+  .title-last-line { max-width: 100%; }
+
+  .hero-copy > p:not(.kicker) {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 58px 48px;
+    gap: 0;
+  }
+
+  .hero-copy > p:not(.kicker) {
+    margin-top: 23px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .actions {
+    margin-top: 28px;
+  }
+
+  .watcher {
+    min-height: 0;
+    padding-inline: 0;
+  }
+  .ascii-eye {
+    width: 100%;
+    aspect-ratio: 1;
+    height: auto;
   }
 
   .section h2 {
@@ -1128,4 +1334,5 @@ footer i {
   .project {
     transition: none;
   }
+
 }

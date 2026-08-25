@@ -15,6 +15,8 @@ var DICT = {
   'nav.contact':       { pt: 'CONTATO',  en: 'CONTACT' },
   'nav.toggleAria':    { pt: 'Abrir menu', en: 'Open menu' },
   'nav.langAria':      { pt: 'Idioma', en: 'Language' },
+  'float.top':         { pt: 'Voltar ao topo', en: 'Back to top' },
+  'float.contact':     { pt: 'Ir para contato', en: 'Go to contact' },
 
   'hero.kicker': { pt: '// SOFTWARE · AUTOMAÇÃO · SECURITY', en: '// SOFTWARE · AUTOMATION · SECURITY' },
   'hero.intro': {

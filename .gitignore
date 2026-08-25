@@ -3,6 +3,7 @@
 
 # Build output
 /dist
+/.lighthouseci
 
 # Environment variables
 .env

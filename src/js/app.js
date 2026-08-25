@@ -37,12 +37,22 @@
   /* ——— Navbar blur on scroll & progress bar ——— */
   var mainNav = document.getElementById('mainNav');
   var progressBar = document.getElementById('scrollProgress');
+  var backToTop = document.getElementById('backToTop');
 
   /* ——— Scroll spy — highlights the nav link for the current section ——— */
   var navAnchors = document.querySelectorAll('.navlinks a');
   var sections = document.querySelectorAll('section[id]');
 
-  function onScroll() {
+  var scrollFrame = 0;
+
+  function setActiveSection(current) {
+    navAnchors.forEach(function (anchor) {
+      anchor.classList.toggle('active', anchor.getAttribute('href') === '#' + current);
+    });
+  }
+
+  function updateScrollUi() {
+    scrollFrame = 0;
     var winScroll = window.scrollY || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
@@ -56,33 +66,55 @@
       mainNav.classList.toggle('scrolled', winScroll > 60);
     }
 
-    // Scroll spy: find current section
-    var current = '';
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    var windowHeight = window.innerHeight;
-    var documentHeight = document.documentElement.scrollHeight;
-
-    // Check if scrolled to bottom
-    if (scrollPosition + windowHeight >= documentHeight - 50) {
-      var lastSection = sections[sections.length - 1];
-      if (lastSection) current = lastSection.id;
-    } else {
-      sections.forEach(function (section) {
-        var rect = section.getBoundingClientRect();
-        if (rect.top <= 180 && rect.bottom >= 180) {
-          current = section.id;
-        }
-      });
+    if (backToTop) {
+      backToTop.classList.toggle('is-visible', winScroll > 420);
     }
 
-    navAnchors.forEach(function (a) {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
+    if (winScroll + window.innerHeight >= document.documentElement.scrollHeight - 50) {
+      var lastSection = sections[sections.length - 1];
+      if (lastSection) setActiveSection(lastSection.id);
+    }
   }
 
-  window.addEventListener('scroll', onScroll);
-  // Run once on load to set initial state
-  onScroll();
+  function onScroll() {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollUi);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  updateScrollUi();
+
+  if ('IntersectionObserver' in window) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActiveSection(entry.target.id);
+      });
+    }, { rootMargin: '-120px 0px -65% 0px', threshold: 0 });
+    sections.forEach(function (section) { sectionObserver.observe(section); });
+  }
+
+  /* Defer the expensive WebGL/Three.js chunk until critical content is painted. */
+  var eyeHost = document.getElementById('asciiEye');
+  var desktopEye = window.matchMedia('(min-width: 901px)');
+  var eyeLoading = false;
+  if (eyeHost) {
+    var loadEye = function () {
+      if (!desktopEye.matches || eyeLoading || eyeHost.dataset.ready === 'true') return;
+      eyeLoading = true;
+      import('./ascii-eye.js').then(function (module) {
+        module.initAsciiEye(eyeHost);
+      }).catch(function () {
+        eyeLoading = false;
+        eyeHost.classList.add('eye-unavailable');
+      });
+    };
+    window.addEventListener('load', function () {
+      if (desktopEye.matches) {
+        if ('requestIdleCallback' in window) requestIdleCallback(loadEye, { timeout: 3000 });
+        else setTimeout(loadEye, 1200);
+      }
+    }, { once: true });
+    if (desktopEye.addEventListener) desktopEye.addEventListener('change', loadEye);
+  }
 
 
   /* ——— Project filters & card click ——— */

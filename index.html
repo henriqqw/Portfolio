@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -29,17 +29,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon_32px.png">
   <link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon_64px.png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-
   <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
 
   <!-- ======================== HEADER ======================== -->
-  <nav id="mainNav" class="site-nav">
+  <nav id="mainNav" class="site-nav" aria-label="Navegação principal">
     <div id="scrollProgress" class="scroll-progress"></div>
     <a href="#hero" class="brand">
       <img src="/favicon/favicon.svg" alt="Logo" class="brand-icon" width="22" height="22">
@@ -70,7 +65,7 @@
     <section id="hero" class="hero shell">
       <div class="hero-copy reveal">
         <p class="kicker" data-i18n="hero.kicker">// SOFTWARE · AUTOMACAO · SECURITY</p>
-        <h1>FullStack<br><em>Software Engineer.</em></h1>
+        <h1>FullStack<br><span class="title-last-line"><em>Software Engineer</em><span class="type-cursor" aria-hidden="true">_</span></span></h1>
         <p data-i18n="hero.intro">
           Engenheiro de Software Full Stack especializado no desenvolvimento de
           aplicações web escaláveis, sistemas de automação ponta a ponta, APIs REST,
@@ -82,25 +77,8 @@
         </div>
       </div>
 
-      <aside class="terminal reveal" data-i18n-aria-label="hero.terminalAria" aria-label="Resumo do perfil em um terminal">
-        <div class="terminal-bar">
-          <div class="terminal-controls">
-            <i class="min" data-i18n-title="win.minimize" title="Minimizar"></i>
-            <i class="max" data-i18n-title="win.maximize" title="Ampliar"></i>
-            <i class="close" data-i18n-title="win.close" title="Fechar"></i>
-          </div>
-          <span class="terminal-title">lanzoni@root:~</span>
-        </div>
-        <div class="terminal-body">
-          <p><b>lanzoni@root</b>:<strong>~$</strong> whoami</p>
-          <p class="answer">fullstack software engineer</p>
-          <p><b>lanzoni@root</b>:<strong>~$</strong> focus --current</p>
-          <p class="answer">python · golang · ts · docker · llm</p>
-          <p><b>lanzoni@root</b>:<strong>~$</strong> status</p>
-          <p class="answer">
-            <span class="status-dot"></span> Open to Work<span class="cursor"></span>
-          </p>
-        </div>
+      <aside class="watcher reveal" aria-label="Olho digital interativo que acompanha o ponteiro">
+        <div class="ascii-eye" id="asciiEye" aria-hidden="true"></div>
       </aside>
     </section>
 
@@ -116,7 +94,7 @@
           <p class="intro" data-i18n="about.intro">
             Engenheiro de Software Full Stack com experiência no desenvolvimento de soluções
             completas para e-commerce, logística, analytics e automação de processos. Meu foco
-            é unir backend robusto (Clean Architecture & SOLID), integrações de IA/LLMs e
+            é unir backend robusto (Clean Architecture &amp; SOLID), integrações de IA/LLMs e
             práticas de desenvolvimento seguro.
           </p>
           <p class="muted" data-i18n="about.muted">
@@ -125,7 +103,7 @@
           </p>
         </div>
 
-        <aside class="terminal">
+        <aside class="terminal" aria-label="Visão geral da stack">
           <div class="terminal-bar">
             <div class="terminal-controls">
               <i class="min" data-i18n-title="win.minimize" title="Minimizar"></i>
@@ -144,30 +122,30 @@
             </div>
 
             <div class="tech-group">
-              <span class="tech-group-title" data-i18n="about.groupLangWeb">Linguagens & Web</span>
+              <span class="tech-group-title" data-i18n="about.groupLangWeb">Linguagens &amp; Web</span>
               <div class="tech-pill-grid">
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="16" height="16">
+                  <img src="/icons/python.svg" alt="Python" width="16" height="16" loading="lazy" decoding="async">
                   <span>Python</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" width="16" height="16">
+                  <img src="/icons/go.svg" alt="Go" width="16" height="16" loading="lazy" decoding="async">
                   <span>Go</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="16" height="16">
+                  <img src="/icons/javascript.svg" alt="JavaScript" width="16" height="16" loading="lazy" decoding="async">
                   <span>JavaScript</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="16" height="16">
+                  <img src="/icons/typescript.svg" alt="TypeScript" width="16" height="16" loading="lazy" decoding="async">
                   <span>TypeScript</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="16" height="16">
+                  <img src="/icons/html5.svg" alt="HTML5" width="16" height="16" loading="lazy" decoding="async">
                   <span>HTML5</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="16" height="16">
+                  <img src="/icons/css3.svg" alt="CSS3" width="16" height="16" loading="lazy" decoding="async">
                   <span>CSS3</span>
                 </div>
               </div>
@@ -177,39 +155,39 @@
               <span class="tech-group-title" data-i18n="about.groupDb">Banco de Dados</span>
               <div class="tech-pill-grid">
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="16" height="16">
+                  <img src="/icons/postgresql.svg" alt="PostgreSQL" width="16" height="16" loading="lazy" decoding="async">
                   <span>PostgreSQL</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" width="16" height="16">
+                  <img src="/icons/sqlite.svg" alt="SQLite" width="16" height="16" loading="lazy" decoding="async">
                   <span>SQLite</span>
                 </div>
               </div>
             </div>
 
             <div class="tech-group">
-              <span class="tech-group-title" data-i18n="about.groupInfra">Infraestrutura & DevOps</span>
+              <span class="tech-group-title" data-i18n="about.groupInfra">Infraestrutura &amp; DevOps</span>
               <div class="tech-pill-grid">
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="16" height="16">
+                  <img src="/icons/docker.svg" alt="Docker" width="16" height="16" loading="lazy" decoding="async">
                   <span>Docker</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="16" height="16">
+                  <img src="/icons/linux.svg" alt="Linux" width="16" height="16" loading="lazy" decoding="async">
                   <span>Linux</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" width="16" height="16">
+                  <img src="/icons/nginx.svg" alt="Nginx" width="16" height="16" loading="lazy" decoding="async">
                   <span>Nginx</span>
                 </div>
                 <div class="tech-pill">
-                  <img src="https://cdn.simpleicons.org/proxmox/E45100" alt="Proxmox" width="16" height="16">
+                  <img src="/icons/proxmox.svg" alt="Proxmox" width="16" height="16" loading="lazy" decoding="async">
                   <span>Proxmox</span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
@@ -225,13 +203,13 @@
           </p>
         </header>
 
-        <div class="filter-list reveal" data-i18n-aria-label="projects.filterAria" aria-label="Filtrar projetos">
-          <button class="filter active" data-filter="all" data-i18n="filter.all">todos</button>
-          <button class="filter" data-filter="product" data-i18n="filter.product">produto</button>
-          <button class="filter" data-filter="security" data-i18n="filter.security">security</button>
-          <button class="filter" data-filter="tool" data-i18n="filter.tool">ferramenta</button>
-          <button class="filter" data-filter="data" data-i18n="filter.data">data</button>
-          <button class="filter" data-filter="web" data-i18n="filter.web">web</button>
+        <div class="filter-list reveal" role="group" data-i18n-aria-label="projects.filterAria" aria-label="Filtrar projetos">
+          <button type="button" class="filter active" data-filter="all" data-i18n="filter.all">todos</button>
+          <button type="button" class="filter" data-filter="product" data-i18n="filter.product">produto</button>
+          <button type="button" class="filter" data-filter="security" data-i18n="filter.security">security</button>
+          <button type="button" class="filter" data-filter="tool" data-i18n="filter.tool">ferramenta</button>
+          <button type="button" class="filter" data-filter="data" data-i18n="filter.data">data</button>
+          <button type="button" class="filter" data-filter="web" data-i18n="filter.web">web</button>
         </div>
       </div>
 
@@ -239,7 +217,7 @@
 
         <!-- AnimeCaos -->
         <article class="project reveal" data-tags="product tool" data-github="https://github.com/henriqqw/AnimeCaos">
-          <img src="/src/assets/images/animecaos.webp" data-i18n-alt="proj.animecaos.alt" alt="Tela do AnimeCaos" loading="lazy">
+          <img src="/src/assets/images/animecaos-768.webp" srcset="/src/assets/images/animecaos-480.webp 480w, /src/assets/images/animecaos-768.webp 768w" sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), 375px" data-i18n-alt="proj.animecaos.alt" alt="Tela do AnimeCaos" width="768" height="364" loading="lazy" decoding="async" fetchpriority="low">
           <div>
             <header>
               <small data-i18n="proj.animecaos.category">01 / PRODUTO</small>
@@ -263,7 +241,7 @@
 
         <!-- Analytics Dashboard -->
         <article class="project reveal" data-tags="data tool" data-github="https://github.com/henriqqw/dashboard_analytics">
-          <img src="/src/assets/images/dashboard.webp" alt="Analytics Dashboard" loading="lazy">
+          <img src="/src/assets/images/dashboard-768.webp" srcset="/src/assets/images/dashboard-480.webp 480w, /src/assets/images/dashboard-768.webp 768w" sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), 375px" alt="Analytics Dashboard" width="768" height="362" loading="lazy" decoding="async" fetchpriority="low">
           <div>
             <header>
               <small data-i18n="proj.dashboard.category">02 / DATA</small>
@@ -286,7 +264,7 @@
 
         <!-- Ego Criativo -->
         <article class="project reveal" data-tags="web" data-github="https://github.com/henriqqw/landingpage-ego-main">
-          <img src="/src/assets/images/egocriativo.webp" data-i18n-alt="proj.ego.alt" alt="Site Ego Criativo" loading="lazy">
+          <img src="/src/assets/images/egocriativo-768.webp" srcset="/src/assets/images/egocriativo-480.webp 480w, /src/assets/images/egocriativo-768.webp 768w" sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), 375px" data-i18n-alt="proj.ego.alt" alt="Site Ego Criativo" width="768" height="364" loading="lazy" decoding="async" fetchpriority="low">
           <div>
             <header>
               <small data-i18n="proj.ego.category">03 / WEB</small>
@@ -311,7 +289,7 @@
 
         <!-- Axion -->
         <article class="project reveal" data-tags="product web" data-github="https://github.com/henriqqw/Axion">
-          <img src="/src/assets/images/axion.webp" data-i18n-alt="proj.axion.alt" alt="Tela do Axion" loading="lazy">
+          <img src="/src/assets/images/axion-768.webp" srcset="/src/assets/images/axion-480.webp 480w, /src/assets/images/axion-768.webp 768w" sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), 375px" data-i18n-alt="proj.axion.alt" alt="Tela do Axion" width="768" height="364" loading="lazy" decoding="async" fetchpriority="low">
           <div>
             <header>
               <small data-i18n="proj.axion.category">04 / PRODUTO</small>
@@ -335,7 +313,7 @@
 
         <!-- XMLRPC Bruteforce -->
         <article class="project reveal" data-tags="security tool" data-github="https://github.com/henriqqw/XMLRPC-Bruteforce">
-          <img src="/src/assets/images/xmlrpc.webp" data-i18n-alt="proj.xmlrpc.alt" alt="Projeto XMLRPC Bruteforce" loading="lazy">
+          <img src="/src/assets/images/xmlrpc-768.webp" srcset="/src/assets/images/xmlrpc-480.webp 480w, /src/assets/images/xmlrpc-768.webp 768w" sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), 375px" data-i18n-alt="proj.xmlrpc.alt" alt="Projeto XMLRPC Bruteforce" width="768" height="364" loading="lazy" decoding="async" fetchpriority="low">
           <div>
             <header>
               <small data-i18n="proj.xmlrpc.category">05 / SECURITY</small>
@@ -358,7 +336,7 @@
 
         <!-- WinOPT Core -->
         <article class="project reveal" data-tags="tool security" data-github="https://github.com/henriqqw/WinOPT-Enterprise">
-          <img src="/src/assets/images/winopt.webp" data-i18n-alt="proj.winopt.alt" alt="Projeto WinOPT Core" loading="lazy">
+          <img src="/src/assets/images/winopt-768.webp" srcset="/src/assets/images/winopt-480.webp 480w, /src/assets/images/winopt-768.webp 768w" sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), 375px" data-i18n-alt="proj.winopt.alt" alt="Projeto WinOPT Core" width="768" height="364" loading="lazy" decoding="async" fetchpriority="low">
           <div>
             <header>
               <small data-i18n="proj.winopt.category">06 / FERRAMENTA</small>
@@ -381,7 +359,7 @@
 
         <!-- AuditFlow -->
         <article class="project reveal" data-tags="tool web" data-github="https://github.com/henriqqw/auditflow-main">
-          <img src="/src/assets/images/auditflow.webp" data-i18n-alt="proj.auditflow.alt" alt="Tela do AuditFlow" loading="lazy">
+          <img src="/src/assets/images/auditflow-768.webp" srcset="/src/assets/images/auditflow-480.webp 480w, /src/assets/images/auditflow-768.webp 768w" sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), 375px" data-i18n-alt="proj.auditflow.alt" alt="Tela do AuditFlow" width="768" height="364" loading="lazy" decoding="async" fetchpriority="low">
           <div>
             <header>
               <small data-i18n="proj.auditflow.category">07 / FERRAMENTA</small>
@@ -405,7 +383,7 @@
 
         <!-- CaosHub -->
         <article class="project reveal" data-tags="tool web" data-github="https://github.com/henriqqw/caoshub">
-          <img src="/src/assets/images/caoshub.webp" data-i18n-alt="proj.caoshub.alt" alt="Tela do CaosHub" loading="lazy">
+          <img src="/src/assets/images/caoshub-768.webp" srcset="/src/assets/images/caoshub-480.webp 480w, /src/assets/images/caoshub-768.webp 768w" sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 900px) calc((100vw - 57px) / 2), 375px" data-i18n-alt="proj.caoshub.alt" alt="Tela do CaosHub" width="768" height="364" loading="lazy" decoding="async" fetchpriority="low">
           <div>
             <header>
               <small data-i18n="proj.caoshub.category">08 / FERRAMENTA</small>
@@ -439,7 +417,7 @@
       <div class="shell">
         <div class="lab-grid">
           <div class="reveal">
-            <p class="kicker" data-i18n="lab.kicker">// 03. SECURITY LAB & CERTIFICAÇÕES</p>
+            <p class="kicker" data-i18n="lab.kicker">// 03. SECURITY LAB &amp; CERTIFICAÇÕES</p>
             <h2 data-i18n="lab.title">Segurança é parte<br>da construção.</h2>
             <p class="description" data-i18n="lab.description">
               Pratico desenvolvimento seguro, hardening de servidores e análise ofensiva.
@@ -457,7 +435,7 @@
               <span class="terminal-title">security-lab.sh</span>
             </div>
             <pre><code>$ ./certs --verify
-[+] Solyd: Hacking & Pentest 2.0
+[+] Solyd: Hacking &amp; Pentest 2.0
 [+] Desec: Pentest Pratico
 [+] Red Team Leaders: Python OffSec
 [+] IBM: Ciberseguran�a
@@ -471,7 +449,7 @@ status: <b>verified_5_certs_</b></code></pre>
           <a href="https://solyd.com.br/verificar/eyJ0JpKWYG/" target="_blank" rel="noreferrer" class="cert-card">
             <img src="/src/assets/images/solyd_treinamentos_logo.webp" alt="Solyd Treinamentos Logo" loading="lazy" class="cert-logo">
             <div class="cert-info">
-              <h3>Hacking & Pentest 2.0</h3>
+              <h3>Hacking &amp; Pentest 2.0</h3>
               <p>Solyd Offensive Security · 2025</p>
             </div>
             <span class="cert-link" data-i18n="lab.certLink">verificar ↗</span>
@@ -529,21 +507,21 @@ status: <b>verified_5_certs_</b></code></pre>
           <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Python</p>
           <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>Go</p>
           <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>TypeScript / JS</p>
-          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>HTML & CSS</p>
+          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>HTML &amp; CSS</p>
         </div>
         <div>
-          <h3>backend & arch</h3>
-          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>APIs REST & Webhooks</p>
-          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Clean Arch & SOLID</p>
+          <h3>backend &amp; arch</h3>
+          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>APIs REST &amp; Webhooks</p>
+          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Clean Arch &amp; SOLID</p>
           <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>PostgreSQL / SQLite</p>
-          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg><span data-i18n="stack.llmRag">Agentes LLM & RAG</span></p>
+          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg><span data-i18n="stack.llmRag">Agentes LLM &amp; RAG</span></p>
         </div>
         <div>
-          <h3>infra & devsec</h3>
-          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>Docker & Linux</p>
-          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Nginx & Self-Hosted</p>
-          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>CI/CD & GitHub Actions</p>
-          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Hardening & OffSec</p>
+          <h3>infra &amp; devsec</h3>
+          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>Docker &amp; Linux</p>
+          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Nginx &amp; Self-Hosted</p>
+          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>CI/CD &amp; GitHub Actions</p>
+          <p><svg class="stack-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Hardening &amp; OffSec</p>
         </div>
       </div>
     </section>
@@ -570,7 +548,7 @@ status: <b>verified_5_certs_</b></code></pre>
         <li>
           <time>2025</time>
           <div>
-            <h3 data-i18n="journey.job2.title">Certificações & OffSec</h3>
+            <h3 data-i18n="journey.job2.title">Certificações &amp; OffSec</h3>
             <p data-i18n="journey.job2.desc">
               Especialização em desenvolvimento seguro, Pentest e Cibersegurança
               com certificações Solyd, Desec, IBM e Red Team Leaders.
@@ -624,8 +602,26 @@ status: <b>verified_5_certs_</b></code></pre>
   </main>
 
   <footer>
-    &copy; <span id="year"></span> Henrique Lanzoni <i>&mdash;</i> built with HTML, CSS & JavaScript
+    &copy; <span id="year"></span> Henrique Lanzoni <i>&mdash;</i> built with HTML, CSS &amp; JavaScript
   </footer>
+
+  <nav class="floating-actions" aria-label="Atalhos da página">
+    <a id="backToTop" class="floating-action back-to-top" href="#hero"
+       data-i18n-aria-label="float.top" data-i18n-title="float.top"
+       aria-label="Voltar ao topo" title="Voltar ao topo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="m18 15-6-6-6 6"/>
+      </svg>
+    </a>
+    <a class="floating-action floating-contact" href="#contact"
+       data-i18n-aria-label="float.contact" data-i18n-title="float.contact"
+       aria-label="Ir para contato" title="Ir para contato">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+        <path d="M8 9h8M8 13h5"/>
+      </svg>
+    </a>
+  </nav>
 
   <script type="module" src="/src/js/analytics.js"></script>
   <script type="module" src="/src/js/i18n.js"></script>
