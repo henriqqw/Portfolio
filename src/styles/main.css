@@ -26,6 +26,7 @@
   --mono:     'DM Mono', monospace;
   --sans:     'Space Grotesk Variable', 'Space Grotesk', sans-serif;
   --display:  'Doto Variable', 'Doto', monospace;
+  --heading:  'Geist Mono', 'DM Mono', monospace;
 }
 
 
@@ -350,15 +351,28 @@ img {
 h1,
 h2 {
   margin: 0;
+  letter-spacing: -.035em;
+  line-height: .98;
+}
+
+h1,
+#contact h2 {
   font-family: var(--display);
   font-weight: 900;
   letter-spacing: -.035em;
   line-height: .98;
 }
 
+h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  letter-spacing: -.055em;
+  line-height: 1.03;
+}
+
 h3 {
-  font-family: var(--display);
-  font-weight: 800;
+  font-family: var(--heading);
+  font-weight: 700;
 }
 
 h1 {
