@@ -64,11 +64,11 @@ var DICT = {
 
   'proj.linkSite': { pt: 'site ↗', en: 'website ↗' },
 
-  'proj.animecaos.alt':      { pt: 'Tela do AnimeCaos', en: 'AnimeCaos screenshot' },
+  'proj.animecaos.alt':      { pt: 'Tela inicial do AnimeCaos v3', en: 'AnimeCaos v3 home screen' },
   'proj.animecaos.category': { pt: '01 / PRODUTO', en: '01 / PRODUCT' },
   'proj.animecaos.desc': {
-    pt: 'Aplicação desktop que agrega fontes brasileiras, pesquisa conteúdo e consulta metadados do AniList.',
-    en: 'Desktop app that aggregates Brazilian sources, searches content, and looks up metadata from AniList.'
+    pt: 'Aplicativo desktop open source para animes e mangás, com backend em Go/Wails e interface React + TypeScript.',
+    en: 'Open-source desktop app for anime and manga, with a Go/Wails backend and a React + TypeScript interface.'
   },
 
   'proj.dashboard.category': { pt: '02 / DATA', en: '02 / DATA' },
