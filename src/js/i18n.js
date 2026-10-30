@@ -71,49 +71,56 @@ var DICT = {
     en: 'Open-source desktop app for anime and manga, with a Go/Wails backend and a React + TypeScript interface.'
   },
 
-  'proj.dashboard.category': { pt: '02 / DATA', en: '02 / DATA' },
+  'proj.khaos.alt': { pt: 'Capa do KhaosMCP com o mascote sobre um terminal', en: 'KhaosMCP cover with its mascot over a terminal' },
+  'proj.khaos.category': { pt: '02 / SECURITY', en: '02 / SECURITY' },
+  'proj.khaos.desc': {
+    pt: 'Plataforma local-first de pentest via MCP, com execução supervisionada, evidências revisáveis e relatórios.',
+    en: 'Local-first pentesting platform over MCP, with supervised execution, reviewable evidence, and reports.'
+  },
+
+  'proj.dashboard.category': { pt: '03 / DATA', en: '03 / DATA' },
   'proj.dashboard.desc': {
     pt: 'Dashboard first-party para rastrear visitas, cliques e instalações sem depender de terceiros.',
     en: 'First-party dashboard for tracking visits, clicks, and installs without relying on third parties.'
   },
 
   'proj.ego.alt':      { pt: 'Site Ego Criativo', en: 'Ego Criativo website' },
-  'proj.ego.category': { pt: '03 / WEB', en: '03 / WEB' },
+  'proj.ego.category': { pt: '04 / WEB', en: '04 / WEB' },
   'proj.ego.desc': {
     pt: 'Landing page institucional da Ego Criativo, agencia de publicidade, tecnologia e eventos. Site estatico em Astro + Tailwind v4, com deploy continuo na Vercel.',
     en: 'Institutional landing page for Ego Criativo, an advertising, technology, and events agency. Static site built with Astro + Tailwind v4, with continuous deployment on Vercel.'
   },
 
   'proj.axion.alt':      { pt: 'Tela do Axion', en: 'Axion screenshot' },
-  'proj.axion.category': { pt: '04 / PRODUTO', en: '04 / PRODUCT' },
+  'proj.axion.category': { pt: '05 / PRODUTO', en: '05 / PRODUCT' },
   'proj.axion.desc': {
     pt: 'Base de conhecimento local-first: edicao rica, canvas e dados persistidos como Markdown no disco.',
     en: 'Local-first knowledge base: rich editing, canvas, and data persisted as Markdown on disk.'
   },
 
   'proj.xmlrpc.alt':      { pt: 'Projeto XMLRPC Bruteforce', en: 'XMLRPC Bruteforce project' },
-  'proj.xmlrpc.category': { pt: '05 / SECURITY', en: '05 / SECURITY' },
+  'proj.xmlrpc.category': { pt: '06 / SECURITY', en: '06 / SECURITY' },
   'proj.xmlrpc.desc': {
     pt: 'Ferramenta de estudo para testes autorizados no endpoint XML-RPC de instalações WordPress.',
     en: 'Study tool for authorized testing against the XML-RPC endpoint of WordPress installations.'
   },
 
   'proj.winopt.alt':      { pt: 'Projeto WinOPT Core', en: 'WinOPT Core project' },
-  'proj.winopt.category': { pt: '06 / FERRAMENTA', en: '06 / TOOL' },
+  'proj.winopt.category': { pt: '07 / FERRAMENTA', en: '07 / TOOL' },
   'proj.winopt.desc': {
     pt: 'Utilitário para ajustes de privacidade e desempenho em ambientes Windows corporativos.',
     en: 'Utility for privacy and performance tweaks in corporate Windows environments.'
   },
 
   'proj.auditflow.alt':      { pt: 'Tela do AuditFlow', en: 'AuditFlow screenshot' },
-  'proj.auditflow.category': { pt: '07 / FERRAMENTA', en: '07 / TOOL' },
+  'proj.auditflow.category': { pt: '08 / FERRAMENTA', en: '08 / TOOL' },
   'proj.auditflow.desc': {
     pt: 'Audita um site inteiro com um comando e devolve um relatório só: performance, SEO, acessibilidade, responsividade, crawling e stress test consolidados em seis blocos com nota e evidência.',
     en: 'Audits an entire website with one command and returns a single report: performance, SEO, accessibility, responsiveness, crawling, and stress testing consolidated into six scored blocks with evidence.'
   },
 
   'proj.caoshub.alt':      { pt: 'Tela do CaosHub', en: 'CaosHub screenshot' },
-  'proj.caoshub.category': { pt: '08 / FERRAMENTA', en: '08 / TOOL' },
+  'proj.caoshub.category': { pt: '09 / FERRAMENTA', en: '09 / TOOL' },
   'proj.caoshub.desc': {
     pt: 'Hub de ferramentas que executa processamento no navegador, sem uploads ou dependência de servidor.',
     en: 'Tool hub that runs processing entirely in the browser, with no uploads or server dependency.'
