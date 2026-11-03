@@ -10,6 +10,7 @@ var DICT = {
   'nav.about':        { pt: 'SOBRE',    en: 'ABOUT' },
   'nav.projects':      { pt: 'PROJETOS', en: 'PROJECTS' },
   'nav.security':      { pt: 'SECURITY', en: 'SECURITY' },
+  'nav.articles':      { pt: 'ARTIGOS',  en: 'ARTICLES' },
   'nav.stack':         { pt: 'STACK',    en: 'STACK' },
   'nav.journey':       { pt: 'JORNADA',  en: 'JOURNEY' },
   'nav.contact':       { pt: 'CONTATO',  en: 'CONTACT' },
@@ -141,12 +142,28 @@ var DICT = {
   },
   'lab.certLink': { pt: 'verificar ↗', en: 'verify ↗' },
 
-  'stack.kicker': { pt: '// 04. STACK', en: '// 04. STACK' },
+  'articles.kicker': { pt: '// 04. ARTIGOS', en: '// 04. ARTICLES' },
+  'articles.title':  { pt: 'O que estou<br><em>escrevendo.</em>', en: "What I'm<br><em>writing about.</em>" },
+  'articles.description': {
+    pt: 'Writeups técnicos sobre o que construo e estudo, publicados no Medium.',
+    en: 'Technical writeups about what I build and study, published on Medium.'
+  },
+  'articles.read': { pt: 'ler no medium ↗', en: 'read on medium ↗' },
+
+  'art.bugbounty.alt':  { pt: 'Capa do artigo com o mascote do KhaosMCP', en: 'Article cover featuring the KhaosMCP mascot' },
+  'art.bugbounty.date': { pt: '03 NOV 2026', en: 'NOV 03, 2026' },
+  'art.bugbounty.read': { pt: '4 min de leitura', en: '4 min read' },
+  'art.bugbounty.desc': {
+    pt: 'Por que agentes de IA ingênuos falham em segurança e como o KhaosMCP resolve isso com operador externo, evidence gate e controle de escopo.',
+    en: 'Why naive AI agents fail at security work, and how KhaosMCP fixes it with an external operator model, an evidence gate, and scope control.'
+  },
+
+  'stack.kicker': { pt: '// 05. STACK', en: '// 05. STACK' },
   'stack.title':  { pt: 'Tecnologias para<br><em>soluções de impacto.</em>', en: 'Technologies for<br><em>impactful solutions.</em>' },
   'stack.groupLang': { pt: 'linguagens', en: 'languages' },
   'stack.llmRag':    { pt: 'Agentes LLM & RAG', en: 'LLM Agents & RAG' },
 
-  'journey.kicker': { pt: '// 05. JORNADA', en: '// 05. JOURNEY' },
+  'journey.kicker': { pt: '// 06. JORNADA', en: '// 06. JOURNEY' },
   'journey.title':  { pt: 'Experiência e<br>evolução contínua.', en: 'Experience and<br>continuous growth.' },
   'journey.job1.title': { pt: 'Engenheiro de Software — Coutinho Companhia', en: 'Software Engineer — Coutinho Companhia' },
   'journey.job1.desc': {
@@ -164,7 +181,7 @@ var DICT = {
     en: 'Built tools like Analytics First-Party, AnimeCaos-dlp, and XMLRPC-Bruteforce, focused on high performance and real-world usefulness.'
   },
 
-  'contact.kicker': { pt: '// 06. CONTATO', en: '// 06. CONTACT' },
+  'contact.kicker': { pt: '// 07. CONTATO', en: '// 07. CONTACT' },
   'contact.title':  { pt: 'Vamos conversar<br>entre em <em>contato.</em>', en: "Let's talk<br>about <em>good ideas.</em>" },
   'contact.description': {
     pt: 'Disponível para oportunidades, colaborações e projetos interessantes.',
