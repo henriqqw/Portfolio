@@ -133,27 +133,54 @@
     }
   });
 
+  /* Only the first PROJECT_LIMIT matches show until "+ ver mais" is clicked */
+  var PROJECT_LIMIT = 6;
+  var moreButton = document.getElementById('projectsMore');
+  var selectedFilter = 'all';
+  var showAll = false;
+
+  function renderProjects() {
+    var matched = 0;
+
+    projects.forEach(function (project) {
+      var tags = project.dataset.tags || '';
+      var matches = selectedFilter === 'all' || tags.indexOf(selectedFilter) !== -1;
+      var shown = matches && (showAll || matched < PROJECT_LIMIT);
+      project.classList.toggle('hidden', !shown);
+      if (matches) matched++;
+    });
+
+    if (emptyMessage) {
+      emptyMessage.hidden = matched > 0;
+    }
+
+    if (moreButton) {
+      moreButton.parentElement.hidden = showAll || matched <= PROJECT_LIMIT;
+      moreButton.setAttribute('aria-expanded', String(showAll));
+    }
+  }
+
   filters.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var selected = btn.dataset.filter;
-      var visible = 0;
+      selectedFilter = btn.dataset.filter;
+      showAll = false;
 
       filters.forEach(function (f) {
         f.classList.toggle('active', f === btn);
       });
 
-      projects.forEach(function (project) {
-        var tags = project.dataset.tags || '';
-        var matches = selected === 'all' || tags.indexOf(selected) !== -1;
-        project.classList.toggle('hidden', !matches);
-        if (matches) visible++;
-      });
-
-      if (emptyMessage) {
-        emptyMessage.hidden = visible > 0;
-      }
+      renderProjects();
     });
   });
+
+  if (moreButton) {
+    moreButton.addEventListener('click', function () {
+      showAll = true;
+      renderProjects();
+    });
+  }
+
+  renderProjects();
 
 
   /* ——— Scroll reveal ——— */

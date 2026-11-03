@@ -893,6 +893,22 @@ button,
   font: 9px var(--mono);
 }
 
+.projects-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.projects-more[hidden] {
+  display: none;
+}
+
+.projects-more .button {
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+}
+
 .empty {
   margin-top: 40px;
   color: var(--muted);

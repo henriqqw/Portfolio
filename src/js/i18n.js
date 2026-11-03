@@ -54,6 +54,7 @@ var DICT = {
     en: 'Applications, utilities, and experiments that reflect what I have been studying and putting into practice.'
   },
   'projects.filterAria': { pt: 'Filtrar projetos', en: 'Filter projects' },
+  'projects.more': { pt: '+ ver mais', en: '+ see more' },
   'projects.empty': { pt: 'Nenhum projeto encontrado para esse filtro.', en: 'No projects found for this filter.' },
 
   'filter.all':      { pt: 'todos', en: 'all' },
