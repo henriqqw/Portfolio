@@ -78,49 +78,56 @@ var DICT = {
     en: 'Local-first pentesting platform over MCP, with supervised execution, reviewable evidence, and reports.'
   },
 
-  'proj.dashboard.category': { pt: '03 / DATA', en: '03 / DATA' },
+  'proj.emporio.alt': { pt: 'Conversa demonstrativa do assistente virtual do Empório da Música', en: 'Demo conversation with Empório da Música’s virtual assistant' },
+  'proj.emporio.category': { pt: '03 / PRODUTO', en: '03 / PRODUCT' },
+  'proj.emporio.desc': {
+    pt: 'Agente de atendimento para loja de instrumentos, com consulta de preços e estoque, acompanhamento de pedidos e suporte via WhatsApp.',
+    en: 'Customer-service agent for a musical-instrument store, with price and stock lookup, order tracking, and WhatsApp-ready support.'
+  },
+
+  'proj.dashboard.category': { pt: '04 / DATA', en: '04 / DATA' },
   'proj.dashboard.desc': {
     pt: 'Dashboard first-party para rastrear visitas, cliques e instalações sem depender de terceiros.',
     en: 'First-party dashboard for tracking visits, clicks, and installs without relying on third parties.'
   },
 
   'proj.ego.alt':      { pt: 'Site Ego Criativo', en: 'Ego Criativo website' },
-  'proj.ego.category': { pt: '04 / WEB', en: '04 / WEB' },
+  'proj.ego.category': { pt: '05 / WEB', en: '05 / WEB' },
   'proj.ego.desc': {
     pt: 'Landing page institucional da Ego Criativo, agencia de publicidade, tecnologia e eventos. Site estatico em Astro + Tailwind v4, com deploy continuo na Vercel.',
     en: 'Institutional landing page for Ego Criativo, an advertising, technology, and events agency. Static site built with Astro + Tailwind v4, with continuous deployment on Vercel.'
   },
 
   'proj.axion.alt':      { pt: 'Tela do Axion', en: 'Axion screenshot' },
-  'proj.axion.category': { pt: '05 / PRODUTO', en: '05 / PRODUCT' },
+  'proj.axion.category': { pt: '06 / PRODUTO', en: '06 / PRODUCT' },
   'proj.axion.desc': {
     pt: 'Base de conhecimento local-first: edicao rica, canvas e dados persistidos como Markdown no disco.',
     en: 'Local-first knowledge base: rich editing, canvas, and data persisted as Markdown on disk.'
   },
 
   'proj.xmlrpc.alt':      { pt: 'Projeto XMLRPC Bruteforce', en: 'XMLRPC Bruteforce project' },
-  'proj.xmlrpc.category': { pt: '06 / SECURITY', en: '06 / SECURITY' },
+  'proj.xmlrpc.category': { pt: '07 / SECURITY', en: '07 / SECURITY' },
   'proj.xmlrpc.desc': {
     pt: 'Ferramenta de estudo para testes autorizados no endpoint XML-RPC de instalações WordPress.',
     en: 'Study tool for authorized testing against the XML-RPC endpoint of WordPress installations.'
   },
 
   'proj.winopt.alt':      { pt: 'Projeto WinOPT Core', en: 'WinOPT Core project' },
-  'proj.winopt.category': { pt: '07 / FERRAMENTA', en: '07 / TOOL' },
+  'proj.winopt.category': { pt: '08 / FERRAMENTA', en: '08 / TOOL' },
   'proj.winopt.desc': {
     pt: 'Utilitário para ajustes de privacidade e desempenho em ambientes Windows corporativos.',
     en: 'Utility for privacy and performance tweaks in corporate Windows environments.'
   },
 
   'proj.auditflow.alt':      { pt: 'Tela do AuditFlow', en: 'AuditFlow screenshot' },
-  'proj.auditflow.category': { pt: '08 / FERRAMENTA', en: '08 / TOOL' },
+  'proj.auditflow.category': { pt: '09 / FERRAMENTA', en: '09 / TOOL' },
   'proj.auditflow.desc': {
     pt: 'Audita um site inteiro com um comando e devolve um relatório só: performance, SEO, acessibilidade, responsividade, crawling e stress test consolidados em seis blocos com nota e evidência.',
     en: 'Audits an entire website with one command and returns a single report: performance, SEO, accessibility, responsiveness, crawling, and stress testing consolidated into six scored blocks with evidence.'
   },
 
   'proj.caoshub.alt':      { pt: 'Tela do CaosHub', en: 'CaosHub screenshot' },
-  'proj.caoshub.category': { pt: '09 / FERRAMENTA', en: '09 / TOOL' },
+  'proj.caoshub.category': { pt: '10 / FERRAMENTA', en: '10 / TOOL' },
   'proj.caoshub.desc': {
     pt: 'Hub de ferramentas que executa processamento no navegador, sem uploads ou dependência de servidor.',
     en: 'Tool hub that runs processing entirely in the browser, with no uploads or server dependency.'
