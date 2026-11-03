@@ -150,6 +150,14 @@ var DICT = {
   },
   'articles.read': { pt: 'ler no medium ↗', en: 'read on medium ↗' },
 
+  'art.animescraper.alt':  { pt: 'Capa do artigo com a tela inicial do AnimeCaos', en: 'Article cover showing the AnimeCaos home screen' },
+  'art.animescraper.date': { pt: '03 NOV 2026', en: 'NOV 03, 2026' },
+  'art.animescraper.read': { pt: '8 min de leitura', en: '8 min read' },
+  'art.animescraper.desc': {
+    pt: 'Por que a versão em Python do AnimeCaos tinha que morrer e como a reescrita em Go virou um único executável, com scrapers validados, auto-update e lógica compartilhada com Android.',
+    en: 'Why the Python version of AnimeCaos had to die, and how the Go rewrite became a single executable with validated scrapers, auto-update, and logic shared with Android.'
+  },
+
   'art.bugbounty.alt':  { pt: 'Capa do artigo com o mascote do KhaosMCP', en: 'Article cover featuring the KhaosMCP mascot' },
   'art.bugbounty.date': { pt: '03 NOV 2026', en: 'NOV 03, 2026' },
   'art.bugbounty.read': { pt: '4 min de leitura', en: '4 min read' },
