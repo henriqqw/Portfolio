@@ -6,7 +6,7 @@
 
 - [Portfolio](https://henriquelanzoni.vercel.app/): Perfil profissional, projetos, certificações, stack, experiência e contato.
 - [GitHub](https://github.com/henriqqw): Repositórios e projetos open source.
-- [Medium](https://medium.com/@lanzonicmpny13): Artigos e writeups técnicos.
+- [Medium](https://henriqqw.medium.com): Artigos e writeups técnicos.
 - [LinkedIn](https://www.linkedin.com/in/henrique-lanzoni-ab0828371/): Perfil profissional.
 
 ## Contato
