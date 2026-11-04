@@ -893,17 +893,18 @@ button,
   font: 9px var(--mono);
 }
 
-.projects-more {
+.show-more {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
 
-.projects-more[hidden] {
+.show-more[hidden],
+.article-card.hidden {
   display: none;
 }
 
-.projects-more .button {
+.show-more .button {
   color: var(--text);
   background: transparent;
   cursor: pointer;

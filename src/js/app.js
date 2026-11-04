@@ -133,6 +133,20 @@
     }
   });
 
+  /* ——— "+ ver mais" / "− ver menos" toggle, shared by projects and articles ——— */
+  function updateMoreButton(button, expanded, needed) {
+    if (!button) return;
+    button.parentElement.hidden = !needed;
+    button.setAttribute('aria-expanded', String(expanded));
+    button.querySelector('[data-i18n="common.more"]').hidden = expanded;
+    button.querySelector('[data-i18n="common.less"]').hidden = !expanded;
+  }
+
+  // Collapsing pulls content out from above the button, so bring it back into view
+  function keepInView(button) {
+    button.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
   /* Only the first PROJECT_LIMIT matches show until "+ ver mais" is clicked */
   var PROJECT_LIMIT = 6;
   var moreButton = document.getElementById('projectsMore');
@@ -154,10 +168,7 @@
       emptyMessage.hidden = matched > 0;
     }
 
-    if (moreButton) {
-      moreButton.parentElement.hidden = showAll || matched <= PROJECT_LIMIT;
-      moreButton.setAttribute('aria-expanded', String(showAll));
-    }
+    updateMoreButton(moreButton, showAll, matched > PROJECT_LIMIT);
   }
 
   filters.forEach(function (btn) {
@@ -175,12 +186,38 @@
 
   if (moreButton) {
     moreButton.addEventListener('click', function () {
-      showAll = true;
+      showAll = !showAll;
       renderProjects();
+      if (!showAll) keepInView(moreButton);
     });
   }
 
   renderProjects();
+
+
+  /* ——— Articles — same toggle pattern, no filters ——— */
+  var ARTICLE_LIMIT = 2;
+  var articles = document.querySelectorAll('.article-card');
+  var articlesMore = document.getElementById('articlesMore');
+  var showAllArticles = false;
+
+  function renderArticles() {
+    articles.forEach(function (article, i) {
+      article.classList.toggle('hidden', !showAllArticles && i >= ARTICLE_LIMIT);
+    });
+
+    updateMoreButton(articlesMore, showAllArticles, articles.length > ARTICLE_LIMIT);
+  }
+
+  if (articlesMore) {
+    articlesMore.addEventListener('click', function () {
+      showAllArticles = !showAllArticles;
+      renderArticles();
+      if (!showAllArticles) keepInView(articlesMore);
+    });
+  }
+
+  renderArticles();
 
 
   /* ——— Scroll reveal ——— */

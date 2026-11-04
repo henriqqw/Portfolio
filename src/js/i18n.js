@@ -17,6 +17,8 @@ var DICT = {
   'nav.toggleAria':    { pt: 'Abrir menu', en: 'Open menu' },
   'nav.langAria':      { pt: 'Idioma', en: 'Language' },
   'float.top':         { pt: 'Voltar ao topo', en: 'Back to top' },
+  'common.more':       { pt: '+ ver mais', en: '+ see more' },
+  'common.less':       { pt: '− ver menos', en: '− see less' },
   'float.contact':     { pt: 'Ir para contato', en: 'Go to contact' },
 
   'hero.kicker': { pt: '// SOFTWARE · AUTOMAÇÃO · SECURITY', en: '// SOFTWARE · AUTOMATION · SECURITY' },
@@ -54,7 +56,6 @@ var DICT = {
     en: 'Applications, utilities, and experiments that reflect what I have been studying and putting into practice.'
   },
   'projects.filterAria': { pt: 'Filtrar projetos', en: 'Filter projects' },
-  'projects.more': { pt: '+ ver mais', en: '+ see more' },
   'projects.empty': { pt: 'Nenhum projeto encontrado para esse filtro.', en: 'No projects found for this filter.' },
 
   'filter.all':      { pt: 'todos', en: 'all' },
@@ -101,14 +102,14 @@ var DICT = {
   },
 
   'proj.axion.alt':      { pt: 'Tela do Axion', en: 'Axion screenshot' },
-  'proj.axion.category': { pt: '06 / PRODUTO', en: '06 / PRODUCT' },
+  'proj.axion.category': { pt: '07 / PRODUTO', en: '07 / PRODUCT' },
   'proj.axion.desc': {
     pt: 'Base de conhecimento local-first: edicao rica, canvas e dados persistidos como Markdown no disco.',
     en: 'Local-first knowledge base: rich editing, canvas, and data persisted as Markdown on disk.'
   },
 
   'proj.xmlrpc.alt':      { pt: 'Projeto XMLRPC Bruteforce', en: 'XMLRPC Bruteforce project' },
-  'proj.xmlrpc.category': { pt: '07 / SECURITY', en: '07 / SECURITY' },
+  'proj.xmlrpc.category': { pt: '06 / SECURITY', en: '06 / SECURITY' },
   'proj.xmlrpc.desc': {
     pt: 'Ferramenta de estudo para testes autorizados no endpoint XML-RPC de instalações WordPress.',
     en: 'Study tool for authorized testing against the XML-RPC endpoint of WordPress installations.'
