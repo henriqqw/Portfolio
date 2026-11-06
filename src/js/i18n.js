@@ -159,6 +159,14 @@ var DICT = {
   },
   'articles.read': { pt: 'ler no medium ↗', en: 'read on medium ↗' },
 
+  'art.proxymanager.alt':  { pt: 'Capa do artigo com o logo do Proxy0x', en: 'Article cover with the Proxy0x logo' },
+  'art.proxymanager.date': { pt: '06 NOV 2026', en: 'NOV 06, 2026' },
+  'art.proxymanager.read': { pt: '5 min de leitura', en: '5 min read' },
+  'art.proxymanager.desc': {
+    pt: 'O que construir o Proxy0x ensinou sobre HTTP, CONNECT e SOCKS5: conexões keep-alive que ninguém rastreava, um guard de SSRF e um servidor MCP pensado para um cliente que não é humano.',
+    en: 'What building Proxy0x taught me about HTTP, CONNECT, and SOCKS5: untracked keep-alive connections, an SSRF guard, and an MCP server designed for a client that isn\'t human.'
+  },
+
   'art.animescraper.alt':  { pt: 'Capa do artigo com a tela inicial do AnimeCaos', en: 'Article cover showing the AnimeCaos home screen' },
   'art.animescraper.date': { pt: '03 NOV 2026', en: 'NOV 03, 2026' },
   'art.animescraper.read': { pt: '8 min de leitura', en: '8 min read' },
