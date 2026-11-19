@@ -159,6 +159,14 @@ var DICT = {
   },
   'articles.read': { pt: 'ler no medium ↗', en: 'read on medium ↗' },
 
+  'art.goconcepts.alt':  { pt: 'Capa do artigo com o gopher do Go ao lado de um editor de código', en: 'Article cover with the Go gopher next to a code editor' },
+  'art.goconcepts.date': { pt: '19 NOV 2026', en: 'NOV 19, 2026' },
+  'art.goconcepts.read': { pt: '5 min de leitura', en: '5 min read' },
+  'art.goconcepts.desc': {
+    pt: 'Como goroutines expuseram bugs de concorrência que eu nem sabia que tinha, e por que idempotência é o que torna retries seguros: a pergunta "e se isso rodar duas vezes?".',
+    en: 'How goroutines exposed concurrency bugs I didn\'t know I had, and why idempotency is what makes retries safe: the question "what if this runs twice?".'
+  },
+
   'art.rcechecklists.alt':  { pt: 'Capa do artigo com o logo do nginx', en: 'Article cover with the nginx logo' },
   'art.rcechecklists.date': { pt: '19 NOV 2026', en: 'NOV 19, 2026' },
   'art.rcechecklists.read': { pt: '5 min de leitura', en: '5 min read' },
