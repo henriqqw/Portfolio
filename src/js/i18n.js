@@ -6,6 +6,9 @@
    rest of the site's vanilla JS approach.
    ============================================================ */
 
+import articles from '../data/articles.json';
+import { articleDict } from './articles.js';
+
 var DICT = {
   'nav.about':        { pt: 'SOBRE',    en: 'ABOUT' },
   'nav.projects':      { pt: 'PROJETOS', en: 'PROJECTS' },
@@ -159,46 +162,6 @@ var DICT = {
   },
   'articles.read': { pt: 'ler no medium ↗', en: 'read on medium ↗' },
 
-  'art.goconcepts.alt':  { pt: 'Capa do artigo com o gopher do Go ao lado de um editor de código', en: 'Article cover with the Go gopher next to a code editor' },
-  'art.goconcepts.date': { pt: '19 NOV 2026', en: 'NOV 19, 2026' },
-  'art.goconcepts.read': { pt: '5 min de leitura', en: '5 min read' },
-  'art.goconcepts.desc': {
-    pt: 'Como goroutines expuseram bugs de concorrência que eu nem sabia que tinha, e por que idempotência é o que torna retries seguros: a pergunta "e se isso rodar duas vezes?".',
-    en: 'How goroutines exposed concurrency bugs I didn\'t know I had, and why idempotency is what makes retries safe: the question "what if this runs twice?".'
-  },
-
-  'art.rcechecklists.alt':  { pt: 'Capa do artigo com o logo do nginx', en: 'Article cover with the nginx logo' },
-  'art.rcechecklists.date': { pt: '19 NOV 2026', en: 'NOV 19, 2026' },
-  'art.rcechecklists.read': { pt: '5 min de leitura', en: '5 min read' },
-  'art.rcechecklists.desc': {
-    pt: 'Por que CVEs com CVSS 9.2 como nginx2root e php2shell raramente viram RCE de verdade: cada uma esconde uma lista de pré-requisitos que elimina a maioria dos alvos antes do primeiro exploit.',
-    en: 'Why 9.2 CVSS CVEs like nginx2root and php2shell rarely become real RCE: each one hides a prerequisite checklist that rules out most targets before the first exploit.'
-  },
-
-  'art.proxymanager.alt':  { pt: 'Capa do artigo com o logo do Proxy0x', en: 'Article cover with the Proxy0x logo' },
-  'art.proxymanager.date': { pt: '06 NOV 2026', en: 'NOV 06, 2026' },
-  'art.proxymanager.read': { pt: '5 min de leitura', en: '5 min read' },
-  'art.proxymanager.desc': {
-    pt: 'O que construir o Proxy0x ensinou sobre HTTP, CONNECT e SOCKS5: conexões keep-alive que ninguém rastreava, um guard de SSRF e um servidor MCP pensado para um cliente que não é humano.',
-    en: 'What building Proxy0x taught me about HTTP, CONNECT, and SOCKS5: untracked keep-alive connections, an SSRF guard, and an MCP server designed for a client that isn\'t human.'
-  },
-
-  'art.animescraper.alt':  { pt: 'Capa do artigo com a tela inicial do AnimeCaos', en: 'Article cover showing the AnimeCaos home screen' },
-  'art.animescraper.date': { pt: '03 NOV 2026', en: 'NOV 03, 2026' },
-  'art.animescraper.read': { pt: '8 min de leitura', en: '8 min read' },
-  'art.animescraper.desc': {
-    pt: 'Por que a versão em Python do AnimeCaos tinha que morrer e como a reescrita em Go virou um único executável, com scrapers validados, auto-update e lógica compartilhada com Android.',
-    en: 'Why the Python version of AnimeCaos had to die, and how the Go rewrite became a single executable with validated scrapers, auto-update, and logic shared with Android.'
-  },
-
-  'art.bugbounty.alt':  { pt: 'Capa do artigo com o mascote do KhaosMCP', en: 'Article cover featuring the KhaosMCP mascot' },
-  'art.bugbounty.date': { pt: '03 NOV 2026', en: 'NOV 03, 2026' },
-  'art.bugbounty.read': { pt: '4 min de leitura', en: '4 min read' },
-  'art.bugbounty.desc': {
-    pt: 'Por que agentes de IA ingênuos falham em segurança e como o KhaosMCP resolve isso com operador externo, evidence gate e controle de escopo.',
-    en: 'Why naive AI agents fail at security work, and how KhaosMCP fixes it with an external operator model, an evidence gate, and scope control.'
-  },
-
   'stack.kicker': { pt: '// 05. STACK', en: '// 05. STACK' },
   'stack.title':  { pt: 'Tecnologias para<br><em>soluções de impacto.</em>', en: 'Technologies for<br><em>impactful solutions.</em>' },
   'stack.groupLang': { pt: 'linguagens', en: 'languages' },
@@ -235,6 +198,9 @@ var DICT = {
     en: "Henrique Lanzoni's portfolio — software, automation, and security research."
   }
 };
+
+// Article strings live in articles.json alongside the rest of each article
+Object.assign(DICT, articleDict(articles));
 
 (function () {
   'use strict';

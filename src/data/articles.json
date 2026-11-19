@@ -1,0 +1,93 @@
+[
+  {
+    "id": "bugbounty",
+    "mediumId": "3f394786a247",
+    "pinned": true,
+    "url": "https://henriqqw.medium.com/how-i-built-an-ai-powered-bug-bounty-agent-that-actually-respects-scope-3f394786a247",
+    "title": "How I Built an AI-Powered Bug Bounty Agent That Actually Respects Scope",
+    "date": "2026-11-03",
+    "readMinutes": 4,
+    "image": { "src": "/src/assets/images/article-bugbounty-agent-768.webp", "width": 768, "height": 384 },
+    "alt": {
+      "pt": "Capa do artigo com o mascote do KhaosMCP",
+      "en": "Article cover featuring the KhaosMCP mascot"
+    },
+    "desc": {
+      "pt": "Por que agentes de IA ingênuos falham em segurança e como o KhaosMCP resolve isso com operador externo, evidence gate e controle de escopo.",
+      "en": "Why naive AI agents fail at security work, and how KhaosMCP fixes it with an external operator model, an evidence gate, and scope control."
+    },
+    "tags": ["AI Agents", "MCP", "Pentesting", "OffSec"]
+  },
+  {
+    "id": "goconcepts",
+    "mediumId": "13c0b6fb980e",
+    "url": "https://henriqqw.medium.com/the-two-concepts-that-changed-how-i-write-any-code-not-just-go-13c0b6fb980e",
+    "title": "The Two Concepts That Changed How I Write Any Code, Not Just Go",
+    "date": "2026-11-19",
+    "readMinutes": 5,
+    "image": { "src": "/src/assets/images/article-go-concepts-768.webp", "width": 768, "height": 381 },
+    "alt": {
+      "pt": "Capa do artigo com o gopher do Go ao lado de um editor de código",
+      "en": "Article cover with the Go gopher next to a code editor"
+    },
+    "desc": {
+      "pt": "Como goroutines expuseram bugs de concorrência que eu nem sabia que tinha, e por que idempotência é o que torna retries seguros: a pergunta \"e se isso rodar duas vezes?\".",
+      "en": "How goroutines exposed concurrency bugs I didn't know I had, and why idempotency is what makes retries safe: the question \"what if this runs twice?\"."
+    },
+    "tags": ["Go", "Concurrency", "Idempotency", "Backend"]
+  },
+  {
+    "id": "rcechecklists",
+    "mediumId": "60a590ef01f5",
+    "url": "https://henriqqw.medium.com/rce-is-not-a-button-why-webs-most-alarming-cves-have-hidden-checklists-60a590ef01f5",
+    "title": "RCE Is Not a Button: Why Web's Most Alarming CVEs Have Hidden Checklists",
+    "date": "2026-11-19",
+    "readMinutes": 5,
+    "image": { "src": "/src/assets/images/article-rce-checklists-768.webp", "width": 768, "height": 432 },
+    "alt": {
+      "pt": "Capa do artigo com o logo do nginx",
+      "en": "Article cover with the nginx logo"
+    },
+    "desc": {
+      "pt": "Por que CVEs com CVSS 9.2 como nginx2root e php2shell raramente viram RCE de verdade: cada uma esconde uma lista de pré-requisitos que elimina a maioria dos alvos antes do primeiro exploit.",
+      "en": "Why 9.2 CVSS CVEs like nginx2root and php2shell rarely become real RCE: each one hides a prerequisite checklist that rules out most targets before the first exploit."
+    },
+    "tags": ["CVE", "RCE", "Web Security", "Pentesting"]
+  },
+  {
+    "id": "proxymanager",
+    "mediumId": "8f77a7f317b2",
+    "url": "https://henriqqw.medium.com/what-building-a-windows-proxy-manager-taught-me-about-networks-and-protocols-8f77a7f317b2",
+    "title": "What Building a Windows Proxy Manager Taught Me About Networks and Protocols",
+    "date": "2026-11-06",
+    "readMinutes": 5,
+    "image": { "src": "/src/assets/images/article-proxy-manager-768.webp", "width": 768, "height": 414 },
+    "alt": {
+      "pt": "Capa do artigo com o logo do Proxy0x",
+      "en": "Article cover with the Proxy0x logo"
+    },
+    "desc": {
+      "pt": "O que construir o Proxy0x ensinou sobre HTTP, CONNECT e SOCKS5: conexões keep-alive que ninguém rastreava, um guard de SSRF e um servidor MCP pensado para um cliente que não é humano.",
+      "en": "What building Proxy0x taught me about HTTP, CONNECT, and SOCKS5: untracked keep-alive connections, an SSRF guard, and an MCP server designed for a client that isn't human."
+    },
+    "tags": ["Go", "Networking", "SOCKS5", "MCP"]
+  },
+  {
+    "id": "animescraper",
+    "mediumId": "b1af3c1bd0fd",
+    "url": "https://henriqqw.medium.com/how-i-rewrote-an-anime-scraper-in-go-and-shipped-it-as-one-file-b1af3c1bd0fd",
+    "title": "How I Rewrote an Anime Scraper in Go and Shipped It as One File",
+    "date": "2026-11-03",
+    "readMinutes": 8,
+    "image": { "src": "/src/assets/images/article-anime-scraper-go-768.webp", "width": 768, "height": 414 },
+    "alt": {
+      "pt": "Capa do artigo com a tela inicial do AnimeCaos",
+      "en": "Article cover showing the AnimeCaos home screen"
+    },
+    "desc": {
+      "pt": "Por que a versão em Python do AnimeCaos tinha que morrer e como a reescrita em Go virou um único executável, com scrapers validados, auto-update e lógica compartilhada com Android.",
+      "en": "Why the Python version of AnimeCaos had to die, and how the Go rewrite became a single executable with validated scrapers, auto-update, and logic shared with Android."
+    },
+    "tags": ["Go", "Web Scraping", "Wails", "gomobile"]
+  }
+]
