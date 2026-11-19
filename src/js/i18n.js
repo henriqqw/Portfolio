@@ -159,6 +159,14 @@ var DICT = {
   },
   'articles.read': { pt: 'ler no medium ↗', en: 'read on medium ↗' },
 
+  'art.rcechecklists.alt':  { pt: 'Capa do artigo com o logo do nginx', en: 'Article cover with the nginx logo' },
+  'art.rcechecklists.date': { pt: '19 NOV 2026', en: 'NOV 19, 2026' },
+  'art.rcechecklists.read': { pt: '5 min de leitura', en: '5 min read' },
+  'art.rcechecklists.desc': {
+    pt: 'Por que CVEs com CVSS 9.2 como nginx2root e php2shell raramente viram RCE de verdade: cada uma esconde uma lista de pré-requisitos que elimina a maioria dos alvos antes do primeiro exploit.',
+    en: 'Why 9.2 CVSS CVEs like nginx2root and php2shell rarely become real RCE: each one hides a prerequisite checklist that rules out most targets before the first exploit.'
+  },
+
   'art.proxymanager.alt':  { pt: 'Capa do artigo com o logo do Proxy0x', en: 'Article cover with the Proxy0x logo' },
   'art.proxymanager.date': { pt: '06 NOV 2026', en: 'NOV 06, 2026' },
   'art.proxymanager.read': { pt: '5 min de leitura', en: '5 min read' },
